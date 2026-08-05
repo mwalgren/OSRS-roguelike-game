@@ -7,11 +7,11 @@ const Slot = preload("res://Scenes/UI/Inventory/inventory_slot.tscn")
 
 
 func _ready() -> void:
-	populate_items(test_inv.slota_data_array)##TESTING ONLY
+	populate_items(test_inv.slot_data_array)##TESTING ONLY
 
 
 func set_inventory_data(inventory_data:InventoryData) ->void:
-	populate_items(inventory_data.slota_data_array)
+	populate_items(inventory_data.slot_data_array)
 
 func populate_items(slot_array:Array[SlotData]) ->void:
 	for child in item_grid.get_children():

@@ -9,6 +9,6 @@ const max_stack_size:int = 99
 
 func set_quantity(value:int) -> void:
 	quantity = value
-	if quantity > 1 && not item_data.stackable:
+	if item_data and quantity > 1 && not item_data.stackable:
 		quantity = 1
-		push_error("%s is not stackable")
+		push_error("%s is not stackable" % item_data.name)

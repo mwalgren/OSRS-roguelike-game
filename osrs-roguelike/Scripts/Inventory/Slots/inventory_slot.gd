@@ -12,3 +12,5 @@ func set_slot_data(slot_data:SlotData) -> void:
 	if slot_data.quantity > 1:
 		qty_lbl.text = "x%s" % slot_data.quantity
 		qty_lbl.show()
+	else:
+		qty_lbl.hide()

@@ -1,4 +1,4 @@
 extends Resource
 class_name InventoryData
 
-@export var slota_data_array:Array [SlotData]
+@export var slot_data_array:Array [SlotData]
