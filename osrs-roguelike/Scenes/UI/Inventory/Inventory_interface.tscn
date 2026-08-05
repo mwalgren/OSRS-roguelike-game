@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://pv802hbbkvyh"]
+
+[ext_resource type="PackedScene" uid="uid://d0ifrpury1gif" path="res://Scenes/UI/Inventory/Inventory.tscn" id="1_26vd6"]
+[ext_resource type="Script" uid="uid://dkes85034oyvs" path="res://Scripts/Inventory/Inventory_Data/inventory_interface.gd" id="1_w7sp8"]
+[ext_resource type="Resource" uid="uid://djw83gk31g7gd" path="res://Resources/Inventory/player_inventory.tres" id="2_tl688"]
+
+[node name="UI" type="CanvasLayer" unique_id=347560292]
+
+[node name="Inventory_interface" type="Control" parent="." unique_id=1008425100]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_w7sp8")
+test_player_inv = ExtResource("2_tl688")
+
+[node name="Player_inventory" parent="Inventory_interface" unique_id=1491653078 instance=ExtResource("1_26vd6")]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 26.0
+offset_bottom = 26.0
+test_inv = ExtResource("2_tl688")

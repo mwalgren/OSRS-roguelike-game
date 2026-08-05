@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="InventoryData" format=3 uid="uid://djw83gk31g7gd"]
+
+[ext_resource type="Script" uid="uid://bj8cs2tkr16tq" path="res://Scripts/Inventory/Inventory_Data/intentory_data.gd" id="1_qwddm"]
+[ext_resource type="Script" uid="uid://bmlrdcysi7482" path="res://Scripts/Inventory/Slots/slot_data.gd" id="2_4t8we"]
+[ext_resource type="Resource" uid="uid://lg4cfsg06qtq" path="res://Resources/Items/meat.tres" id="3_afwgh"]
+[ext_resource type="Resource" uid="uid://becx4uatvhf8c" path="res://Resources/Items/bronze_sword.tres" id="4_fy7e0"]
+
+[sub_resource type="Resource" id="Resource_afwgh"]
+script = ExtResource("2_4t8we")
+item_data = ExtResource("3_afwgh")
+quantity = 4
+metadata/_custom_type_script = "uid://bmlrdcysi7482"
+
+[sub_resource type="Resource" id="Resource_fy7e0"]
+script = ExtResource("2_4t8we")
+item_data = ExtResource("4_fy7e0")
+metadata/_custom_type_script = "uid://bmlrdcysi7482"
+
+[resource]
+script = ExtResource("1_qwddm")
+slota_data_array = Array[ExtResource("2_4t8we")]([null, null, SubResource("Resource_afwgh"), null, SubResource("Resource_fy7e0"), null, null, null, null, null])
+metadata/_custom_type_script = "uid://bj8cs2tkr16tq"
