@@ -3,6 +3,7 @@ extends PanelContainer
 @export var art:TextureRect
 @export var qty_lbl:Label
 
+signal slot_clicked(index:int, button:int)
 
 func set_slot_data(slot_data:SlotData) -> void:
 	var item_data = slot_data.item_data
@@ -14,3 +15,12 @@ func set_slot_data(slot_data:SlotData) -> void:
 		qty_lbl.show()
 	else:
 		qty_lbl.hide()
+	
+
+
+func _on_gui_input(event: InputEvent) -> void:
+	if event is InputEventMouseButton \
+			and (event.button_index == MOUSE_BUTTON_LEFT \
+			or event.button_index == MOUSE_BUTTON_RIGHT) \
+			and event.is_pressed():
+		slot_clicked.emit(get_index(), event.button_index)#change this int to a dynamic var
