@@ -1,6 +1,6 @@
 extends Control
 
-var example = preload("res://Resources/Zones/swamp.tres")
+var example = preload("res://Resources/Zones/desert.tres")
 @export var background_container:TextureRect
 @export var enemy_preview:HBoxContainer
 @export var zone_lbl:Label
