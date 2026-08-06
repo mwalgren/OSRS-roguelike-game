@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://becx4uatvhf8c"]
+
+[ext_resource type="Script" uid="uid://6xdxrrheysen" path="res://Scripts/Inventory/Item_Data/item_data.gd" id="1_xpohp"]
+[ext_resource type="Texture2D" uid="uid://bnwwpln7h7w53" path="res://Resources/Texture/item_atlas.tres" id="2_r571j"]
+
+[resource]
+script = ExtResource("1_xpohp")
+name = "Bronze Sword"
+description = "A dull bronze sword"
+texture = ExtResource("2_r571j")
+metadata/_custom_type_script = "uid://6xdxrrheysen"

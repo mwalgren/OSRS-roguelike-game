@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://lg4cfsg06qtq"]
+
+[ext_resource type="Script" uid="uid://6xdxrrheysen" path="res://Scripts/Inventory/Item_Data/item_data.gd" id="1_uls8o"]
+[ext_resource type="Texture2D" uid="uid://3maj84na6t5b" path="res://Assets/Art/UI Icons/Placeholder/32x32.png" id="2_d71pn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0e47m"]
+atlas = ExtResource("2_d71pn")
+region = Rect2(160, 960, 32, 32)
+
+[resource]
+script = ExtResource("1_uls8o")
+name = "Meat"
+description = "A tasty slice of meat"
+stackable = true
+texture = SubResource("AtlasTexture_0e47m")
+metadata/_custom_type_script = "uid://6xdxrrheysen"
