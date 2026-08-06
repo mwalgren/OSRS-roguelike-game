@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dxnuo7ny88fe4"]
 
-[ext_resource type="Script" uid="uid://ry5tr0kd3wkx" path="res://Scenes/UI/Zone Screen/zone_ui_script.gd" id="1_wcg0n"]
+[ext_resource type="Script" uid="uid://ry5tr0kd3wkx" path="res://Scripts/UI/Zone Screen Scripts/zone_ui_script.gd" id="1_wcg0n"]
 [ext_resource type="Texture2D" uid="uid://8jp4l5hp8eb8" path="res://Assets/Art/Background images/Placeholder/swamp.png" id="2_os60k"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hw4o8"]
