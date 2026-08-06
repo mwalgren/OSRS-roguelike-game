@@ -5,9 +5,20 @@
 [ext_resource type="Resource" uid="uid://lg4cfsg06qtq" path="res://Resources/Items/meat.tres" id="3_afwgh"]
 [ext_resource type="Resource" uid="uid://becx4uatvhf8c" path="res://Resources/Items/bronze_sword.tres" id="4_fy7e0"]
 
+[sub_resource type="Resource" id="Resource_afwgh"]
+script = ExtResource("2_4t8we")
+item_data = ExtResource("4_fy7e0")
+metadata/_custom_type_script = "uid://bmlrdcysi7482"
+
 [sub_resource type="Resource" id="Resource_tl688"]
 script = ExtResource("2_4t8we")
 item_data = ExtResource("4_fy7e0")
+metadata/_custom_type_script = "uid://bmlrdcysi7482"
+
+[sub_resource type="Resource" id="Resource_fy7e0"]
+script = ExtResource("2_4t8we")
+item_data = ExtResource("3_afwgh")
+quantity = 4
 metadata/_custom_type_script = "uid://bmlrdcysi7482"
 
 [sub_resource type="Resource" id="Resource_sgu7q"]
@@ -18,5 +29,5 @@ metadata/_custom_type_script = "uid://bmlrdcysi7482"
 
 [resource]
 script = ExtResource("1_qwddm")
-slot_data_array = Array[ExtResource("2_4t8we")]([null, SubResource("Resource_tl688"), null, null, SubResource("Resource_sgu7q"), null, null, null, null, null, null, null, null, null, null, null])
+slot_data_array = Array[ExtResource("2_4t8we")]([SubResource("Resource_afwgh"), SubResource("Resource_tl688"), SubResource("Resource_fy7e0"), null, SubResource("Resource_sgu7q"), null, null, null, null, null, null, null, null, null, null, null])
 metadata/_custom_type_script = "uid://bj8cs2tkr16tq"

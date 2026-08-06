@@ -5,10 +5,10 @@
 [node name="InventorySlot" type="PanelContainer" unique_id=474455334 node_paths=PackedStringArray("art", "qty_lbl")]
 custom_minimum_size = Vector2(64, 64)
 anchors_preset = -1
-anchor_right = 0.031000001
-anchor_bottom = 0.051000003
-offset_right = 0.2879982
-offset_bottom = -0.048000336
+anchor_right = 0.056
+anchor_bottom = 0.09900001
+offset_right = -28.512001
+offset_bottom = -31.152008
 script = ExtResource("1_c7nxj")
 art = NodePath("MarginContainer/TextureRect")
 qty_lbl = NodePath("QtyLabel")
@@ -32,3 +32,5 @@ size_flags_horizontal = 8
 size_flags_vertical = 0
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 3
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]

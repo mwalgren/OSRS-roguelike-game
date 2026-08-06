@@ -94,7 +94,7 @@ theme_override_constants/margin_bottom = 5
 [node name="HBoxContainer" type="VBoxContainer" parent="main_container/MarginContainer" unique_id=1481900860]
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="main_container/MarginContainer/HBoxContainer" unique_id=749323168]
+[node name="HeroImage" type="TextureRect" parent="main_container/MarginContainer/HBoxContainer" unique_id=749323168]
 custom_minimum_size = Vector2(700, 300)
 layout_mode = 2
 size_flags_vertical = 0

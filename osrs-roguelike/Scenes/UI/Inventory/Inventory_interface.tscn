@@ -3,10 +3,11 @@
 [ext_resource type="PackedScene" uid="uid://d0ifrpury1gif" path="res://Scenes/UI/Inventory/Inventory.tscn" id="1_26vd6"]
 [ext_resource type="Script" uid="uid://dkes85034oyvs" path="res://Scripts/Inventory/Inventory_Data/inventory_interface.gd" id="1_w7sp8"]
 [ext_resource type="Resource" uid="uid://djw83gk31g7gd" path="res://Resources/Inventory/player_inventory.tres" id="2_tl688"]
+[ext_resource type="PackedScene" uid="uid://dyksh3dtkh1ny" path="res://Scenes/UI/Inventory/inventory_slot.tscn" id="3_sgu7q"]
 
 [node name="UI" type="CanvasLayer" unique_id=347560292]
 
-[node name="Inventory_interface" type="Control" parent="." unique_id=1008425100]
+[node name="Inventory_interface" type="Control" parent="." unique_id=1008425100 node_paths=PackedStringArray("test_player_inv_panel")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -14,7 +15,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_w7sp8")
-test_player_inv = ExtResource("2_tl688")
+test_player_inv_panel = NodePath("Player_inventory")
+test_inv = ExtResource("2_tl688")
 
 [node name="Player_inventory" parent="Inventory_interface" unique_id=1491653078 instance=ExtResource("1_26vd6")]
 layout_mode = 0
@@ -22,3 +24,10 @@ offset_left = 10.0
 offset_top = 10.0
 offset_right = 26.0
 offset_bottom = 26.0
+
+[node name="InventorySlot" parent="Inventory_interface" unique_id=474455334 instance=ExtResource("3_sgu7q")]
+visible = false
+modulate = Color(1, 1, 1, 0.4627451)
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+anchors_preset = 0
