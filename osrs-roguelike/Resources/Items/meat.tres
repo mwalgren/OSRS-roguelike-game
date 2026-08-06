@@ -9,6 +9,7 @@ region = Rect2(160, 960, 32, 32)
 
 [resource]
 script = ExtResource("1_uls8o")
+TYPE = 5
 name = "Meat"
 description = "A tasty slice of meat"
 stackable = true

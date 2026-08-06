@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="zone" format=3 uid="uid://7ewwtrfxt6hj"]
+
+[ext_resource type="Script" uid="uid://c7tgktjs3bn1s" path="res://Resources/Zones/zone_resource_script.gd" id="1_kbxqa"]
+[ext_resource type="Texture2D" uid="uid://b6bd5w0ay50om" path="res://Assets/Art/UI Icons/Placeholder/chicken.png" id="2_4nrjc"]
+[ext_resource type="Texture2D" uid="uid://b41r73oac6b55" path="res://Assets/Art/UI Icons/Placeholder/goblin.png" id="3_mvfel"]
+[ext_resource type="Texture2D" uid="uid://bktb7lpq7xyfv" path="res://Assets/Art/UI Icons/Placeholder/cow.png" id="4_v5hv7"]
+[ext_resource type="Texture2D" uid="uid://8jp4l5hp8eb8" path="res://Assets/Art/Background images/Placeholder/swamp.png" id="5_v5hv7"]
+
+[resource]
+script = ExtResource("1_kbxqa")
+zone_name = "Swamp"
+zone_enemy_preview = Array[Texture]([ExtResource("2_4nrjc"), ExtResource("3_mvfel"), ExtResource("4_v5hv7")])
+zone_level = "Level 1 "
+zone_main_img = ExtResource("5_v5hv7")
+metadata/_custom_type_script = "uid://c7tgktjs3bn1s"

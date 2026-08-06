@@ -1,0 +1,138 @@
+[gd_scene format=3 uid="uid://dxnuo7ny88fe4"]
+
+[ext_resource type="Script" uid="uid://ry5tr0kd3wkx" path="res://Scripts/UI/Zone Screen Scripts/zone_ui_script.gd" id="1_wcg0n"]
+[ext_resource type="Texture2D" uid="uid://8jp4l5hp8eb8" path="res://Assets/Art/Background images/Placeholder/swamp.png" id="2_os60k"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hw4o8"]
+bg_color = Color(0.019925632, 0.019925635, 0.019925613, 0.078431375)
+
+[node name="ZoneScreen" type="Control" unique_id=2058708122 node_paths=PackedStringArray("background_container", "enemy_preview", "zone_lbl", "zone_lvl_lbl")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wcg0n")
+background_container = NodePath("Bg")
+enemy_preview = NodePath("image_preview/HBoxContainer")
+zone_lbl = NodePath("MarginContainer/VBoxContainer/zone_lbl")
+zone_lvl_lbl = NodePath("MarginContainer/VBoxContainer/zone_lvl_lbl")
+
+[node name="Bg" type="TextureRect" parent="." unique_id=1073818031]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_os60k")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1658837063]
+custom_minimum_size = Vector2(1000, 75)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -500.0
+offset_top = -107.0
+offset_right = 500.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_left = 300
+theme_override_constants/margin_right = 300
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=325671203]
+layout_mode = 2
+
+[node name="zone_lbl" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1180020047]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+horizontal_alignment = 1
+
+[node name="zone_lvl_lbl" type="Label" parent="MarginContainer/VBoxContainer" unique_id=2035276275]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+horizontal_alignment = 1
+
+[node name="main_img" type="Panel" parent="." unique_id=365343413]
+custom_minimum_size = Vector2(500, 300)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.28300002
+anchor_top = 0.18200001
+anchor_right = 0.717
+anchor_bottom = 0.64500004
+offset_left = -0.016021729
+offset_top = 0.06399536
+offset_right = 0.015991211
+offset_bottom = 0.039978027
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_hw4o8")
+
+[node name="TextureRect" type="TextureRect" parent="main_img" unique_id=498225680]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Scrollers" type="Control" parent="." unique_id=808580009]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Left_axis_button" type="Button" parent="Scrollers" unique_id=1597826503]
+custom_minimum_size = Vector2(75, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.043
+anchor_bottom = 1.0
+offset_right = 25.463997
+grow_vertical = 2
+text = "<"
+
+[node name="Left_axis_button2" type="Button" parent="Scrollers" unique_id=1306737256]
+custom_minimum_size = Vector2(75, 0)
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -75.0
+grow_horizontal = 0
+grow_vertical = 2
+text = ">"
+
+[node name="image_preview" type="MarginContainer" parent="." unique_id=179084718]
+custom_minimum_size = Vector2(700, 100)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.19600001
+anchor_top = 0.68500006
+anchor_right = 0.804
+anchor_bottom = 0.84000003
+offset_left = 0.20799255
+offset_top = -9.880035
+offset_right = -0.20800781
+offset_bottom = -0.32000732
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="HBoxContainer" type="HBoxContainer" parent="image_preview" unique_id=158577732]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2

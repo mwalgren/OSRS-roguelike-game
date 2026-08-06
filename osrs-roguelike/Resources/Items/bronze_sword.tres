@@ -5,6 +5,7 @@
 
 [resource]
 script = ExtResource("1_xpohp")
+TYPE = 4
 name = "Bronze Sword"
 description = "A dull bronze sword"
 texture = ExtResource("2_r571j")
