@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://be2mxshd376vl"]
+
+[ext_resource type="Script" uid="uid://cnhsm2yoqnuc1" path="res://Scenes/UI/UI Elements/Buttons/osrsbutton.gd" id="1_35o6o"]
+[ext_resource type="Texture2D" uid="uid://diqx2eu8oxvko" path="res://Assets/Art/UI Icons/UI Elements/Buttons/homebutton.png" id="1_ylgk5"]
+
+[node name="Osrsbutton" type="Control" unique_id=112067902]
+custom_minimum_size = Vector2(420, 100)
+custom_maximum_size = Vector2(420, 100)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+script = ExtResource("1_35o6o")
+
+[node name="Button" type="TextureButton" parent="." unique_id=2059300430]
+custom_minimum_size = Vector2(420, 100)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("1_ylgk5")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Text" type="Label" parent="Button" unique_id=1530116554]
+custom_maximum_size = Vector2(-1, 80)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -43.5
+offset_top = -25.0
+offset_right = 43.5
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.83137256, 0.6862745, 0.21568628, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 36
+text = "PLAY"
+horizontal_alignment = 1
+vertical_alignment = 1
