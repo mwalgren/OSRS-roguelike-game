@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://btw6mg1fui6ma" path="res://Scripts/UI/Start_screen/splash_screen_script.gd" id="1_tf6yu"]
 [ext_resource type="Texture2D" uid="uid://cs1aplpw5y5vx" path="res://Assets/Art/Background images/Placeholder/ChatGPT_Image_Aug_5_2026_05_56_13_PM.png" id="2_jnn5b"]
+[ext_resource type="PackedScene" uid="uid://be2mxshd376vl" path="res://Scenes/UI/UI Elements/Buttons/Osrsbutton.tscn" id="3_jnn5b"]
 
 [node name="Splash" type="Control" unique_id=2024678326]
 layout_mode = 3
@@ -12,16 +13,31 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_tf6yu")
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=356865468]
+[node name="Backround" type="TextureRect" parent="." unique_id=356865468]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = -1.0
+offset_right = 2.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_jnn5b")
+expand_mode = 1
+stretch_mode = 6
+metadata/_edit_use_anchors_ = true
+
+[node name="Shader" type="ColorRect" parent="." unique_id=207710529]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_jnn5b")
-expand_mode = 1
-stretch_mode = 6
+mouse_filter = 2
+color = Color(0, 0, 0, 0.20784314)
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=893529645]
 custom_minimum_size = Vector2(300, 450)
@@ -42,13 +58,45 @@ theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 5
 theme_override_constants/margin_bottom = 5
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=283130135]
+[node name="Menu" type="VBoxContainer" parent="MarginContainer" unique_id=283130135]
 layout_mode = 2
 alignment = 1
 
-[node name="Button" type="Button" parent="MarginContainer/VBoxContainer" unique_id=471761559]
-custom_minimum_size = Vector2(100, 50)
+[node name="Playbutton" parent="MarginContainer/Menu" unique_id=112067902 instance=ExtResource("3_jnn5b")]
 layout_mode = 2
-text = "PLAY"
+mouse_filter = 2
 
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]
+[node name="InventoryButton" parent="MarginContainer/Menu" unique_id=409288812 instance=ExtResource("3_jnn5b")]
+layout_mode = 2
+mouse_filter = 2
+button_text = "INVENTORY"
+
+[node name="ShopButton" parent="MarginContainer/Menu" unique_id=723671178 instance=ExtResource("3_jnn5b")]
+layout_mode = 2
+mouse_filter = 2
+button_text = "SHOP"
+
+[node name="SettingsButton" parent="MarginContainer/Menu" unique_id=182884096 instance=ExtResource("3_jnn5b")]
+layout_mode = 2
+mouse_filter = 2
+button_text = "SETTINGS"
+
+[node name="ExitButton" parent="MarginContainer/Menu" unique_id=1319958175 instance=ExtResource("3_jnn5b")]
+layout_mode = 2
+mouse_filter = 2
+button_text = "EXIT"
+
+[node name="VersionLabel" type="Label" parent="." unique_id=2143155043]
+z_index = 10
+layout_mode = 0
+offset_left = 769.0
+offset_top = 1012.0
+offset_right = 1189.0
+offset_bottom = 1043.0
+theme_override_colors/font_color = Color(0.83137256, 0.6862745, 0.21568628, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 22
+text = "Version 0.0.1"
+horizontal_alignment = 1
+vertical_alignment = 2
