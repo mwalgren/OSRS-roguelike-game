@@ -34,31 +34,19 @@ func _ready() -> void:
 
 
 func _on_mouse_entered() -> void:
-	animate_button(
-		Vector2(1.03, 1.03),
-		Color(1.08, 1.08, 1.02, 1.0)
-	)
+	animate_button( Vector2(1.03, 1.03), Color(1.08, 1.08, 1.02, 1.0) )
 
 
 func _on_mouse_exited() -> void:
-	animate_button(
-		Vector2.ONE,
-		Color.WHITE
-	)
+	animate_button( Vector2.ONE, Color.WHITE )
 
 
 func _on_button_down() -> void:
-	animate_button(
-		Vector2(0.97, 0.97),
-		Color(0.82, 0.82, 0.82, 1.0)
-	)
+	animate_button(Vector2(0.97, 0.97),Color(0.82, 0.82, 0.82, 1.0))
 
 
 func _on_button_up() -> void:
-	animate_button(
-		Vector2(1.03, 1.03),
-		Color(1.08, 1.08, 1.02, 1.0)
-	)
+	animate_button( Vector2(1.03, 1.03), Color(1.08, 1.08, 1.02, 1.0))
 
 
 func _on_button_pressed() -> void:
@@ -66,10 +54,7 @@ func _on_button_pressed() -> void:
 	pressed.emit()
 
 
-func animate_button(
-	target_scale: Vector2,
-	target_color: Color
-) -> void:
+func animate_button( target_scale: Vector2, target_color: Color ) -> void:
 	if animation_tween:
 		animation_tween.kill()
 

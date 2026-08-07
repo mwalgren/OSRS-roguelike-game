@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://be2mxshd376vl"]
 
-[ext_resource type="Script" uid="uid://cnhsm2yoqnuc1" path="res://Scenes/UI/UI Elements/Buttons/osrsbutton.gd" id="1_35o6o"]
+[ext_resource type="Script" uid="uid://cnhsm2yoqnuc1" path="res://Scripts/UI/UI Elements/Button/osrsbutton.gd" id="1_35o6o"]
 [ext_resource type="Texture2D" uid="uid://diqx2eu8oxvko" path="res://Assets/Art/UI Icons/UI Elements/Buttons/homebutton.png" id="1_ylgk5"]
 
 [node name="Osrsbutton" type="Control" unique_id=112067902]
