@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bktb7lpq7xyfv"
-path="res://.godot/imported/cow.png-914d0ffea7a2b89681bac0eccd8ce819.ctex"
+uid="uid://bnql8a1ophgte"
+path="res://.godot/imported/desert lizard.png-a5fa1943635a29aa08b181d17538b7ca.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Art/UI Icons/Placeholder/cow.png"
-dest_files=["res://.godot/imported/cow.png-914d0ffea7a2b89681bac0eccd8ce819.ctex"]
+source_file="res://Assets/Art/UI Icons/Placeholder/Zone 2 opps/desert lizard.png"
+dest_files=["res://.godot/imported/desert lizard.png-a5fa1943635a29aa08b181d17538b7ca.ctex"]
 
 [params]
 

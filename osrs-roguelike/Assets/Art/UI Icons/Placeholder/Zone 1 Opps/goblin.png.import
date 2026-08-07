@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://51jp2a06s4vm"
-path="res://.godot/imported/Scorpian.png-fa91f40249d4d947476c5c7684559899.ctex"
+uid="uid://b41r73oac6b55"
+path="res://.godot/imported/goblin.png-64442dd74c9e6fb55328153d998913ee.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Art/UI Icons/Placeholder/Scorpian.png"
-dest_files=["res://.godot/imported/Scorpian.png-fa91f40249d4d947476c5c7684559899.ctex"]
+source_file="res://Assets/Art/UI Icons/Placeholder/Zone 1 Opps/goblin.png"
+dest_files=["res://.godot/imported/goblin.png-64442dd74c9e6fb55328153d998913ee.ctex"]
 
 [params]
 

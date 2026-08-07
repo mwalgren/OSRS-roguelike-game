@@ -1,13 +1,15 @@
 [gd_resource type="Resource" script_class="zone" format=3 uid="uid://8whkm82da4hs"]
 
 [ext_resource type="Script" uid="uid://c7tgktjs3bn1s" path="res://Resources/Zones/zone_resource_script.gd" id="1_dhfxq"]
-[ext_resource type="Texture2D" uid="uid://51jp2a06s4vm" path="res://Assets/Art/UI Icons/Placeholder/Scorpian.png" id="2_ohp3s"]
+[ext_resource type="Texture2D" uid="uid://bnql8a1ophgte" path="res://Assets/Art/UI Icons/Placeholder/Zone 2 opps/desert lizard.png" id="2_04qv3"]
+[ext_resource type="Texture2D" uid="uid://51jp2a06s4vm" path="res://Assets/Art/UI Icons/Placeholder/Zone 2 opps/Scorpian.png" id="2_ohp3s"]
 [ext_resource type="Texture2D" uid="uid://jixi5nlmvjvl" path="res://Assets/Art/Background images/Placeholder/Alkrid.png" id="3_q1la5"]
+[ext_resource type="Texture2D" uid="uid://cnktdbmkfa2p5" path="res://Assets/Art/UI Icons/Placeholder/Zone 2 opps/Warrior.png" id="4_pq7w3"]
 
 [resource]
 script = ExtResource("1_dhfxq")
 zone_name = "Desert"
-zone_enemy_preview = Array[Texture]([ExtResource("2_ohp3s")])
+zone_enemy_preview = Array[Texture]([ExtResource("2_04qv3"), ExtResource("2_ohp3s"), ExtResource("4_pq7w3")])
 zone_level = "Level 2"
 zone_main_img = ExtResource("3_q1la5")
 metadata/_custom_type_script = "uid://c7tgktjs3bn1s"

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b6bd5w0ay50om"
-path="res://.godot/imported/chicken.png-a5b324e81adc84efc3fbdd4c14c2d220.ctex"
+uid="uid://bktb7lpq7xyfv"
+path="res://.godot/imported/cow.png-c4ddd64639200fe64e2e88ef3366a8ea.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Art/UI Icons/Placeholder/chicken.png"
-dest_files=["res://.godot/imported/chicken.png-a5b324e81adc84efc3fbdd4c14c2d220.ctex"]
+source_file="res://Assets/Art/UI Icons/Placeholder/Zone 1 Opps/cow.png"
+dest_files=["res://.godot/imported/cow.png-c4ddd64639200fe64e2e88ef3366a8ea.ctex"]
 
 [params]
 
