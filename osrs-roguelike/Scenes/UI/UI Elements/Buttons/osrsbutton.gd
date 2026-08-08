@@ -64,6 +64,7 @@ func _on_button_up() -> void:
 func _on_button_pressed() -> void:
 	print(button_text + " CLICKED")
 	pressed.emit()
+	get_tree().change_scene_to_file("res://Scenes/UI/Zone Screen/Zone_screen.tscn")
 
 
 func animate_button(
