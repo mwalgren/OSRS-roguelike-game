@@ -4,6 +4,9 @@
 [ext_resource type="Script" uid="uid://dkes85034oyvs" path="res://Scripts/Inventory/Inventory_Data/inventory_interface.gd" id="1_w7sp8"]
 [ext_resource type="Resource" uid="uid://djw83gk31g7gd" path="res://Resources/Inventory/player_inventory.tres" id="2_tl688"]
 [ext_resource type="PackedScene" uid="uid://dyksh3dtkh1ny" path="res://Scenes/UI/Inventory/inventory_slot.tscn" id="3_sgu7q"]
+[ext_resource type="PackedScene" uid="uid://be2mxshd376vl" path="res://Scenes/UI/UI Elements/Buttons/Osrsbutton.tscn" id="4_back"]
+[ext_resource type="Texture2D" path="res://Assets/Art/Background images/Placeholder/ChatGPT_Image_Aug_5_2026_05_56_13_PM.png" id="5_background"]
+[ext_resource type="Texture2D" path="res://Assets/Art/UI Icons/UI Elements/Inventory/inventory_frame.png" id="6_frame"]
 
 [node name="UI" type="CanvasLayer" unique_id=347560292]
 
@@ -18,12 +21,75 @@ script = ExtResource("1_w7sp8")
 test_player_inv_panel = NodePath("Player_inventory")
 test_inv = ExtResource("2_tl688")
 
+[node name="Background" type="TextureRect" parent="Inventory_interface"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("5_background")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="DimOverlay" type="ColorRect" parent="Inventory_interface"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0.55)
+
+[node name="InventoryFrame" type="TextureRect" parent="Inventory_interface"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -400.0
+offset_top = -330.0
+offset_right = 400.0
+offset_bottom = 203.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("6_frame")
+expand_mode = 1
+stretch_mode = 5
+
 [node name="Player_inventory" parent="Inventory_interface" unique_id=1491653078 instance=ExtResource("1_26vd6")]
-layout_mode = 0
-offset_left = 10.0
-offset_top = 10.0
-offset_right = 26.0
-offset_bottom = 26.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -272.0
+offset_top = -148.0
+offset_right = 272.0
+offset_bottom = 132.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BackButton" parent="Inventory_interface" instance=ExtResource("4_back")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -210.0
+offset_top = 226.0
+offset_right = 210.0
+offset_bottom = 326.0
+grow_horizontal = 2
+grow_vertical = 2
+button_text = "BACK"
 
 [node name="InventorySlot" parent="Inventory_interface" unique_id=474455334 instance=ExtResource("3_sgu7q")]
 visible = false
@@ -31,3 +97,5 @@ modulate = Color(1, 1, 1, 0.4627451)
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 anchors_preset = 0
+
+[connection signal="pressed" from="Inventory_interface/BackButton" to="Inventory_interface" method="_on_back_button_pressed"]

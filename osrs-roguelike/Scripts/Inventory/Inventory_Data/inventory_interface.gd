@@ -35,3 +35,7 @@ func update_dragged_slot() -> void:
 		inventory_slot.set_slot_data(slot_drag_data)
 	else:
 		inventory_slot.hide()
+
+
+func _on_back_button_pressed() -> void:
+	get_tree().change_scene_to_file("res://Scenes/UI/Start Screen/Splash.tscn")

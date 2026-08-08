@@ -52,7 +52,7 @@ func _on_button_up() -> void:
 func _on_button_pressed() -> void:
 	print(button_text + " CLICKED")
 	pressed.emit()
-
+	
 
 func animate_button( target_scale: Vector2, target_color: Color ) -> void:
 	if animation_tween:

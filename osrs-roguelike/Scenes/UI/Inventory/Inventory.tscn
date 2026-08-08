@@ -3,10 +3,13 @@
 [ext_resource type="Script" uid="uid://doek2bmr7pe20" path="res://Scripts/Inventory/inventory.gd" id="1_g03ro"]
 [ext_resource type="Resource" uid="uid://djw83gk31g7gd" path="res://Resources/Inventory/player_inventory.tres" id="2_yw1pt"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_inventory"]
+
 [node name="Inventory" type="PanelContainer" unique_id=1491653078 node_paths=PackedStringArray("item_grid")]
 script = ExtResource("1_g03ro")
 item_grid = NodePath("MarginContainer/ItemGrid")
 test_inv = ExtResource("2_yw1pt")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_inventory")
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=56430906]
 layout_mode = 2

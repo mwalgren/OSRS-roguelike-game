@@ -1,9 +1,10 @@
 [gd_scene format=3 uid="uid://dyksh3dtkh1ny"]
 
 [ext_resource type="Script" uid="uid://caskqki5xjw45" path="res://Scripts/Inventory/Slots/inventory_slot.gd" id="1_c7nxj"]
+[ext_resource type="Texture2D" path="res://Assets/Art/UI Icons/UI Elements/Inventory/inventory_slot.png" id="2_slot"]
 
 [node name="InventorySlot" type="PanelContainer" unique_id=474455334 node_paths=PackedStringArray("art", "qty_lbl")]
-custom_minimum_size = Vector2(64, 64)
+custom_minimum_size = Vector2(88, 88)
 anchors_preset = -1
 anchor_right = 0.056
 anchor_bottom = 0.09900001
@@ -12,6 +13,18 @@ offset_bottom = -31.152008
 script = ExtResource("1_c7nxj")
 art = NodePath("MarginContainer/TextureRect")
 qty_lbl = NodePath("QtyLabel")
+
+[node name="SlotBackground" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("2_slot")
+expand_mode = 1
+stretch_mode = 5
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=2003149226]
 layout_mode = 2
