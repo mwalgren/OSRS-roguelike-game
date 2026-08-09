@@ -1,0 +1,77 @@
+[gd_scene format=3 uid="uid://cy6o5hyo8xv4e"]
+
+[ext_resource type="Script" uid="uid://dn0lijge2ed3t" path="res://Scripts/UI/Player Equipment UI/player_equipment_script.gd" id="1_vcdjg"]
+
+[node name="PlayerEquipment" type="PanelContainer" unique_id=920537212 node_paths=PackedStringArray("left_slots_vbox", "right_slots_vbox")]
+custom_minimum_size = Vector2(700, 550)
+custom_maximum_size = Vector2(700, 550)
+anchors_preset = -1
+anchor_left = 0.31800002
+anchor_top = 0.245
+anchor_right = 0.68200004
+anchor_bottom = 0.75500005
+offset_left = -610.56006
+offset_top = -264.6
+offset_right = 610.55994
+offset_bottom = 264.5999
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vcdjg")
+left_slots_vbox = NodePath("HBoxContainer/MarginContainer/left_side_slots")
+right_slots_vbox = NodePath("HBoxContainer/MarginContainer2/right_side_slots")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1911688214]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer" unique_id=2113039919]
+custom_minimum_size = Vector2(64, 550)
+custom_maximum_size = Vector2(64, 550)
+layout_mode = 2
+theme_override_constants/margin_top = 100
+theme_override_constants/margin_bottom = 100
+
+[node name="left_side_slots" type="VBoxContainer" parent="HBoxContainer/MarginContainer" unique_id=944593463]
+custom_minimum_size = Vector2(64, 550)
+custom_maximum_size = Vector2(64, 550)
+layout_mode = 2
+alignment = 1
+
+[node name="main_panel" type="VBoxContainer" parent="HBoxContainer" unique_id=1808345919]
+custom_minimum_size = Vector2(300, 550)
+custom_maximum_size = Vector2(300, 550)
+layout_mode = 2
+mouse_filter = 2
+alignment = 1
+
+[node name="character_preview" type="SubViewportContainer" parent="HBoxContainer/main_panel" unique_id=528188965]
+custom_minimum_size = Vector2(300, 250)
+custom_maximum_size = Vector2(300, 250)
+layout_mode = 2
+
+[node name="character" type="SubViewport" parent="HBoxContainer/main_panel/character_preview" unique_id=1808531844]
+handle_input_locally = false
+render_target_update_mode = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/main_panel" unique_id=1546643357]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="MarginContainer2" type="MarginContainer" parent="HBoxContainer" unique_id=460435761]
+custom_minimum_size = Vector2(64, 550)
+custom_maximum_size = Vector2(64, 550)
+layout_mode = 2
+theme_override_constants/margin_top = 100
+theme_override_constants/margin_bottom = 100
+
+[node name="right_side_slots" type="VBoxContainer" parent="HBoxContainer/MarginContainer2" unique_id=298591401]
+custom_minimum_size = Vector2(64, 550)
+custom_maximum_size = Vector2(64, 550)
+layout_mode = 2
+alignment = 1
+
+[node name="StatsPanel" type="Panel" parent="." unique_id=1685788870]
+custom_minimum_size = Vector2(122, 0)
+custom_maximum_size = Vector2(122, -1)
+layout_mode = 2
+size_flags_horizontal = 8

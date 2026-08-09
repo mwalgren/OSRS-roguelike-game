@@ -1,7 +1,8 @@
 extends Resource
 class_name ItemData
 
-@export_enum("HEAD", "BODY", "FEET", "LEGS", "WEAPON", "OTHER") var TYPE
+enum TYPE {NONE, HEAD, BODY, LEGS, WEAPON, FOOD, NECKLACE, RING, BOOTS}
+@export var item_type:TYPE = TYPE.NONE
 
 @export var name:String = ''
 @export_multiline var description:String = ''

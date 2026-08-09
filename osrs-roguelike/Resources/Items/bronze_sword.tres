@@ -5,8 +5,8 @@
 
 [resource]
 script = ExtResource("1_xpohp")
-TYPE = 4
+item_type = 4
 name = "Bronze Sword"
-description = "A dull bronze sword"
+description = "A bronze Sword"
 texture = ExtResource("2_r571j")
 metadata/_custom_type_script = "uid://6xdxrrheysen"

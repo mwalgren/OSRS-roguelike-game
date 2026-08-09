@@ -2,6 +2,7 @@ extends Resource
 class_name InventoryData
 
 signal inventory_interact(inventory_data:InventoryData, index:int, button:int)
+signal inventory_equip(inventory_data:InventoryData, index:int)
 signal inventory_update(inventory_data:InventoryData)
 
 @export var slot_data_array:Array [SlotData]
@@ -48,3 +49,7 @@ func drop_single_slot_data(slot_drag_data:SlotData, index:int) ->SlotData:
 	if slot_drag_data.quantity > 0:
 		return slot_drag_data
 	else: return null
+
+
+func on_slot_equip(index):
+	inventory_equip.emit(self,index)
