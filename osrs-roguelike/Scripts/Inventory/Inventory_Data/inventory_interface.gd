@@ -56,12 +56,6 @@ func on_inventory_equip(inventory_data:InventoryData, index:int):
 	if displaced: 
 		inventory_data.drop_slot_data(displaced, index)
 
-
-func on_equipment_unequipped(unequipped_data:SlotData):
-	if test_inv.add_slot_data(unequipped_data):
-		return
-	for i in range(test_inv.slot_data_array.size()):
-		var left_over = test_inv.drop_single_slot_data(unequipped_data, i)
-		if left_over == null:
-			return
-	print("Unable to unequip; inventory full:", unequipped_data.item_data.name)
+func on_inventory_unequip(inventory_data:InventoryData, index:int):
+	if inventory_data:
+		inventory_data = null
