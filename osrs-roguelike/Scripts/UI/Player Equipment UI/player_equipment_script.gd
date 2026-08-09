@@ -9,9 +9,6 @@ var equipped:Dictionary = {}
 var slot_nodes = {}
 
 func _ready() -> void:
-	for i in range(3):
-		var slot_ = equipment_slot.instantiate()
-		left_slots_vbox.add_child(slot_)
 	for n in find_children("*", "", true, false):
 		if n is ItemSlotUI:
 			print(n.name, " -> ", n.get_script().resource_path)

@@ -9,4 +9,4 @@ anchor_bottom = 0.07
 offset_right = 0.288002
 offset_bottom = 0.16799927
 script = ExtResource("2_hbvfs")
-slot_type = 4
+slot_type = 0
