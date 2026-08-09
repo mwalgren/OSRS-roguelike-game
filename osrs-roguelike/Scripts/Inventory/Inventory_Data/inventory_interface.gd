@@ -3,6 +3,7 @@ extends Control
 @export var test_player_inv_panel:PanelContainer
 @export var test_inv:Resource #TESTING ONLY
 
+#test
 var slot_drag_data:SlotData
 @onready var inventory_slot: PanelContainer = $InventorySlot
 @export var player_equipment:PanelContainer
