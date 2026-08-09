@@ -31,7 +31,7 @@ func _on_gui_input(event: InputEvent) -> void:
 		slot_clicked.emit(get_index(), event.button_index)#change this int to a dynamic var
 
 
-func clear_slots() -> void:
+func clear_slot() -> void:
 	art.texture = null
 	qty_lbl.hide()
 	tooltip_text = ""

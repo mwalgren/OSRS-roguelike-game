@@ -1,7 +1,6 @@
 extends PanelContainer
 
 
-var equipment_slot = preload("res://Scenes/UI/Equipment/equipment_slot.tscn")
 @export var left_slots_vbox:VBoxContainer
 @export var right_slots_vbox:VBoxContainer
 
@@ -15,7 +14,7 @@ func _ready() -> void:
 	for slot in find_children("*", "EquipmentSlot", true, false):
 		if slot.slot_type != ItemData.TYPE.NONE:
 			slot_nodes[slot.slot_type] = slot
-			slot.clear_slots()
+			slot.clear_slot()
 
 
 func equip(slot_data:SlotData):
@@ -29,3 +28,8 @@ func equip(slot_data:SlotData):
 	equipped[type] = slot_data
 	slot_nodes[type].set_slot_data(slot_data)
 	return displaced
+
+func unequip(slot):
+	for i in find_children("*", "EquipmentSlot", true, false):
+		if slot.slot_data != null:
+			slot.slot_data == null

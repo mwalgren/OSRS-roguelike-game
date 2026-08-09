@@ -47,7 +47,7 @@ func on_inventory_equip(inventory_data:InventoryData, index:int):
 		return
 	
 	var slot_data = inventory_data.slot_data_array[index]
-	print("type: ", slot_data.item_data.item_type)
+	#print("type: ", slot_data.item_data.item_type)
 	if not slot_data or slot_data.item_data.item_type == ItemData.TYPE.NONE:
 		return
 	var grabbed = inventory_data.grab_slot_data(index)
