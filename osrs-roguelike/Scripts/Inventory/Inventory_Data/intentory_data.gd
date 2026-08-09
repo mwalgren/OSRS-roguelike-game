@@ -50,6 +50,18 @@ func drop_single_slot_data(slot_drag_data:SlotData, index:int) ->SlotData:
 		return slot_drag_data
 	else: return null
 
+func add_slot_data(slot_drag_data:SlotData) -> bool:
+	for i in range(slot_data_array.size()):
+		var s:SlotData = slot_data_array[i]
+		if s and s.can_merge_slot(slot_drag_data):
+			s.merge_slots(slot_drag_data)
+			inventory_update.emit(self)
+			return true
+	for i in range(slot_data_array.size()):
+		if not slot_data_array[i]:
+			slot_data_array[i] = slot_drag_data
+			inventory_update.emit(self)
+	return false
 
 func on_slot_equip(index):
 	inventory_equip.emit(self,index)

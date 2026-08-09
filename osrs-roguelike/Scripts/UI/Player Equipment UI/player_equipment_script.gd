@@ -4,6 +4,8 @@ extends PanelContainer
 @export var left_slots_vbox:VBoxContainer
 @export var right_slots_vbox:VBoxContainer
 
+signal emit_unequip_data(slot_data)
+
 var equipped:Dictionary = {}
 var slot_nodes = {}
 
@@ -15,6 +17,7 @@ func _ready() -> void:
 		if slot.slot_type != ItemData.TYPE.NONE:
 			slot_nodes[slot.slot_type] = slot
 			slot.clear_slot()
+			slot.connect("slot_unequip", Callable(self, "on_slot_unequip"))
 
 
 func equip(slot_data:SlotData):
@@ -28,3 +31,14 @@ func equip(slot_data:SlotData):
 	equipped[type] = slot_data
 	slot_nodes[type].set_slot_data(slot_data)
 	return displaced
+
+func _on_slot_unequip(slot) -> void:
+	var t = slot.slot_type
+	if not equipped.has(t):
+		return
+
+	var unequipped: SlotData = equipped.get(t)
+	equipped.erase(t)
+	slot.clear_slot()
+	emit_signal("equipment_unequipped", unequipped)
+	print("on_slot_unequip fired")
