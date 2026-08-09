@@ -57,4 +57,5 @@ func on_inventory_equip(inventory_data:InventoryData, index:int):
 		inventory_data.drop_slot_data(displaced, index)
 
 func on_inventory_unequip(inventory_data:InventoryData, index:int):
-	pass
+	if inventory_data:
+		inventory_data = null
