@@ -15,6 +15,13 @@ func _physics_process(delta: float) -> void:
 
 func _ready() -> void:
 	set_player_inventory_data(test_inv)
+	
+	if player_equipment == null:
+		push_error("player_equipment isnt assigned")
+	else:
+		if not player_equipment.is_connected("emit_unequip_data", Callable(self,"on_equipment_unequipped")):
+			player_equipment.connect("emit_unequip_data", Callable(self, "on_equipment_unequipped"))
+			print("connected to equipment_unequipped")
 
 func set_player_inventory_data(inv_data:InventoryData) -> void:
 	test_player_inv_panel.set_inventory_data(inv_data)

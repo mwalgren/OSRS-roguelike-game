@@ -17,7 +17,7 @@ func _ready() -> void:
 		if slot.slot_type != ItemData.TYPE.NONE:
 			slot_nodes[slot.slot_type] = slot
 			slot.clear_slot()
-			slot.connect("slot_unequip", Callable(self, "on_slot_unequip"))
+			slot.slot_unequip.connect(Callable(self, "_on_slot_unequip"))
 
 
 func equip(slot_data:SlotData):
@@ -38,7 +38,7 @@ func _on_slot_unequip(slot) -> void:
 		return
 
 	var unequipped: SlotData = equipped.get(t)
+	emit_unequip_data.emit(unequipped)
 	equipped.erase(t)
 	slot.clear_slot()
-	emit_signal("equipment_unequipped", unequipped)
 	print("on_slot_unequip fired")
