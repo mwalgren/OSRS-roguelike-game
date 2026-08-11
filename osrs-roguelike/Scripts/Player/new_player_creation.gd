@@ -12,7 +12,7 @@ var player_inventory:Array [InventoryData] = []
 @export var magic_level:int = 1 
 @export var prayer_level:int = 1 
 @export var ranged_level:int = 1 
-
+@export var defense_level:int = 1
 
 @export var character_name:String
 

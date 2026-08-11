@@ -64,6 +64,8 @@ func _on_button_up() -> void:
 func _on_button_pressed() -> void:
 	print(button_text + " CLICKED")
 	pressed.emit()
+	var player_instance = Character.new()
+	debug_print(player_instance)
 	get_tree().change_scene_to_file("res://Scenes/UI/Zone Screen/Zone_screen.tscn")
 
 
@@ -90,3 +92,11 @@ func animate_button(
 		target_color,
 		0.08
 	)
+
+
+func debug_print(character) -> void:
+	print("=== %s ===" % character.character_name)
+	print("Attack   : %d" % character.attack_level)
+	print("Strength : %d" % character.strength_level)
+	print("Defense  : %d" % character.defense_level)
+	print("Defense  : %d" % character.prayer_level)

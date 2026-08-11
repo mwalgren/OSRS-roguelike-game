@@ -1,17 +1,13 @@
 [gd_resource type="Resource" script_class="DefaultDeck" format=3 uid="uid://c5jbf0ubjhhm0"]
 
 [ext_resource type="Script" uid="uid://k5kprrd78im0" path="res://Scripts/Deck/default_deck.gd" id="1_sqpqu"]
-[ext_resource type="Resource" uid="uid://y3a2144atqox" path="res://Resources/card_resource/punch.tres" id="1_v30st"]
-[ext_resource type="Resource" uid="uid://b4qfr56lrbwei" path="res://Resources/card_resource/stone_skin.tres" id="1_yjnyg"]
-[ext_resource type="Resource" uid="uid://dpb8ci1lgc6hf" path="res://Resources/card_resource/defend.tres" id="2_1bswk"]
-[ext_resource type="Resource" uid="uid://hpyajoefjw7y" path="res://Resources/card_resource/kick.tres" id="3_vnib3"]
 
 [resource]
 script = ExtResource("1_sqpqu")
 default_deck = {
-ExtResource("1_yjnyg"): 3,
-ExtResource("2_1bswk"): 3,
-ExtResource("3_vnib3"): 3,
-ExtResource("1_v30st"): 3
+"A001": 3,
+"A002": 3,
+"A003": 3,
+"A004": 3
 }
 metadata/_custom_type_script = "uid://k5kprrd78im0"
