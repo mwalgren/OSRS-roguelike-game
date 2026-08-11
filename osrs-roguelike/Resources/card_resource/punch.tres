@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="CardData" format=3 uid="uid://y3a2144atqox"]
+
+[ext_resource type="Script" uid="uid://ddgutk55umf80" path="res://Scripts/Card/card_def.gd" id="1_v5hbo"]
+
+[resource]
+script = ExtResource("1_v5hbo")
+card_id = "A001"
+card_name = "Punch"
+card_descrip = "A basic melee attack"
+rarity = "Common"
+target_type = "Single"
+cost = 1
+metadata/_custom_type_script = "uid://ddgutk55umf80"
