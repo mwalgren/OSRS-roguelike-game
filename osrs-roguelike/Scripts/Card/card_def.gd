@@ -10,11 +10,12 @@ class_name CardData
 @export var card_name:String
 @export var card_descrip:String
 @export var rarity:String
-
+@export_enum("ATTACK", "STRENGTH", "MAGIC", "PRAYER", "DEFENSE", "RANGED") var xp_reward_type
 
 #------------------------------------
 @export_category("Damage & Effects")
-@export var dmg:int = 1
+@export var dmg:int = 0
+@export var armor:int = 0
 @export var target_type:String
 
 

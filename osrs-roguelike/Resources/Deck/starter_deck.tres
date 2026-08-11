@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="DefaultDeck" format=3 uid="uid://c5jbf0ubjhhm0"]
+
+[ext_resource type="Script" uid="uid://k5kprrd78im0" path="res://Scripts/Deck/default_deck.gd" id="1_sqpqu"]
+
+[resource]
+script = ExtResource("1_sqpqu")
+default_deck = {
+"A001": 3,
+"A002": 3,
+"A003": 3,
+"A004": 3
+}
+metadata/_custom_type_script = "uid://k5kprrd78im0"

@@ -8,6 +8,8 @@ extends Control
 @export var zone_lvl_lbl:Label
 var _current_zone_index = 0
 
+@export var starter_deck:DefaultDeck
+
 func _ready() -> void:
 	set_zone_data(zone_array[_current_zone_index])
 
@@ -35,3 +37,8 @@ func _on_left_button_pressed() -> void:
 func change_zone(step:int) ->void:
 	_current_zone_index = clampi(_current_zone_index + step, 0 , zone_array.size()-1)
 	set_zone_data(zone_array[_current_zone_index])
+
+
+func _on_battle_button_pressed() -> void:
+	var deck = DeckList.new()
+	deck.build_from_default(starter_deck.default_deck)

@@ -18,6 +18,7 @@ config/icon="res://Assets/Art/UI Icons/Placeholder/icon.svg"
 [autoload]
 
 CardRegistry="*uid://dgwjse2gkpasv"
+GameManager="*uid://la2c3nyctne2"
 
 [display]
 

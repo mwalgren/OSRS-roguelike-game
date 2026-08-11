@@ -28,7 +28,7 @@ func get_total():
 
 func build_from_default(deck):
 	entries.clear()
-	entries = deck.default_deck.duplicate(true)
+	entries = deck.duplicate(true)
 	print(entries, "Card Entries")
 
 

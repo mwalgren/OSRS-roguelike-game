@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CardData" format=3 uid="uid://dpb8ci1lgc6hf"]
+
+[ext_resource type="Script" uid="uid://ddgutk55umf80" path="res://Scripts/Card/card_def.gd" id="1_ui6fs"]
+
+[resource]
+script = ExtResource("1_ui6fs")
+card_id = "A004"
+card_name = "Defend"
+card_descrip = "Brace for impact!"
+rarity = "Common"
+xp_reward_type = 4
+armor = 2
+cost = 1
+metadata/_custom_type_script = "uid://ddgutk55umf80"
