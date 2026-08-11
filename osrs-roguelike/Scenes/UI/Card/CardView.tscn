@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://dpireqhdii4ht"]
+
+[ext_resource type="Script" uid="uid://dkkwb5kbx2lh5" path="res://Scenes/UI/Card/card_view.gd" id="1_3fjdc"]
+[ext_resource type="Texture2D" uid="uid://dkonwubdsbfyk" path="res://Assets/Art/Card/bg/ChatGPT Image Aug 11, 2026, 10_21_11 AM.png" id="1_bd4yp"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0t348"]
+radius = 121.0
+height = 438.0
+
+[node name="CardView" type="Node2D" unique_id=978725247]
+script = ExtResource("1_3fjdc")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=978170342]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=185878185]
+shape = SubResource("CapsuleShape2D_0t348")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1066262801]
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1424779191]
+custom_minimum_size = Vector2(200, 300)
+custom_maximum_size = Vector2(200, 300)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_bd4yp")
+expand_mode = 1
+stretch_mode = 5
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

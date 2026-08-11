@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://clqs27kpqrv8b"]
+
+[ext_resource type="Script" uid="uid://bxwf18iir7ndv" path="res://Scenes/UI/Hand/hand_ui.gd" id="1_t7meo"]
+
+[node name="HandUi" type="Control" unique_id=971885347]
+custom_minimum_size = Vector2(700, 300)
+custom_maximum_size = Vector2(700, 300)
+layout_mode = 3
+anchor_left = 0.31800002
+anchor_top = 0.36100003
+anchor_right = 0.68200004
+anchor_bottom = 0.62600005
+offset_left = 99.43994
+offset_top = 0.1199646
+offset_right = -99.44006
+offset_bottom = 13.919922
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_t7meo")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=460003206]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
