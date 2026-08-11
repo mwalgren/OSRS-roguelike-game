@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="CardData" format=3 uid="uid://hpyajoefjw7y"]
+
+[ext_resource type="Script" uid="uid://ddgutk55umf80" path="res://Scripts/Card/card_def.gd" id="1_pvxud"]
+
+[resource]
+script = ExtResource("1_pvxud")
+card_id = "A002"
+card_name = "Kick"
+card_descrip = "A swift kick."
+rarity = "Common"
+xp_reward_type = 1
+dmg = 1
+target_type = "Single"
+cost = 1
+metadata/_custom_type_script = "uid://ddgutk55umf80"

@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://8jp4l5hp8eb8" path="res://Assets/Art/Background images/Placeholder/swamp.png" id="2_os60k"]
 [ext_resource type="Resource" uid="uid://7ewwtrfxt6hj" path="res://Resources/Zones/swamp.tres" id="3_2xkba"]
 [ext_resource type="Resource" uid="uid://8whkm82da4hs" path="res://Resources/Zones/desert.tres" id="4_oemnt"]
+[ext_resource type="Resource" uid="uid://c5jbf0ubjhhm0" path="res://Resources/Deck/starter_deck.tres" id="5_2xkba"]
 
 [node name="ZoneScreen" type="Control" unique_id=2058708122 node_paths=PackedStringArray("background_container", "enemy_preview", "zone_lbl", "zone_lvl_lbl")]
 layout_mode = 3
@@ -19,6 +20,7 @@ background_container = NodePath("Bg")
 enemy_preview = NodePath("main_container/MarginContainer/HBoxContainer/HBoxContainer")
 zone_lbl = NodePath("main_container/MarginContainer/HBoxContainer/zone_lbl")
 zone_lvl_lbl = NodePath("main_container/MarginContainer/HBoxContainer/zone_lvl_lbl")
+starter_deck = ExtResource("5_2xkba")
 
 [node name="Bg" type="TextureRect" parent="." unique_id=1073818031]
 layout_mode = 1
@@ -121,3 +123,4 @@ text = "Fight!"
 
 [connection signal="pressed" from="Scrollers/left_button" to="." method="_on_left_button_pressed"]
 [connection signal="pressed" from="Scrollers/right_button" to="." method="_on_right_button_pressed"]
+[connection signal="pressed" from="main_container/MarginContainer/HBoxContainer/battle_button" to="." method="_on_battle_button_pressed"]
