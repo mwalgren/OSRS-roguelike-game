@@ -51,6 +51,11 @@ shft_left_clk={
 ]
 }
 
+[layer_names]
+
+2d_physics/layer_1="card_target_selector"
+2d_physics/layer_2="card_drop_area"
+
 [physics]
 
 3d/physics_engine="Jolt Physics"

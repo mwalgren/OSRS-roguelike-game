@@ -2,43 +2,52 @@
 
 [ext_resource type="Script" uid="uid://dkkwb5kbx2lh5" path="res://Scripts/Card/card_view.gd" id="1_3fjdc"]
 [ext_resource type="Texture2D" uid="uid://dytryfbkmqn20" path="res://Assets/Art/Card/bg/pixelCardAssest.png" id="2_3fjdc"]
+[ext_resource type="Texture2D" uid="uid://c3wcnvnl55tse" path="res://Assets/Art/Card/bg/card_bg_osrs.svg" id="2_ou0hx"]
+[ext_resource type="Script" uid="uid://e8duvgac8ln5" path="res://Scenes/UI/Card/card_state_machine.gd" id="4_cgisx"]
+[ext_resource type="Script" uid="uid://baxpx6bcdv76j" path="res://Scenes/UI/Card/card_base_state.gd" id="5_jdb31"]
+[ext_resource type="Script" uid="uid://clr0ehyvyl8am" path="res://Scenes/UI/Card/card_clicked_state.gd" id="6_2fqyy"]
+[ext_resource type="Script" uid="uid://dn3lv0nxcrhcp" path="res://Scenes/UI/Card/card_drag_state.gd" id="7_35gup"]
+[ext_resource type="Script" uid="uid://coh1ig5krrf1l" path="res://Scenes/UI/Card/card_release_state.gd" id="8_jm703"]
 
-[node name="CardView" type="Control" unique_id=823981040 node_paths=PackedStringArray("art", "costlbl", "namelbl")]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_44wmb"]
+size = Vector2(195, 276)
+
+[node name="CardView" type="Control" unique_id=435281631 node_paths=PackedStringArray("art", "costlbl", "namelbl", "statelbl", "card_state_machine", "drop_point_detector")]
+custom_minimum_size = Vector2(200, 300)
+custom_maximum_size = Vector2(200, 300)
 layout_mode = 3
-anchors_preset = 0
+anchor_right = 0.104
+anchor_bottom = 0.27800003
+offset_right = -199.68001
+offset_bottom = -300.24002
 script = ExtResource("1_3fjdc")
-art = NodePath("Card/art_img")
-costlbl = NodePath("Card/CardElement/Costlbl")
-namelbl = NodePath("Card/card_name")
+art = NodePath("art_img")
+costlbl = NodePath("CardElement/Costlbl")
+namelbl = NodePath("card_name")
+statelbl = NodePath("Label")
+card_state_machine = NodePath("StateMachine")
+drop_point_detector = NodePath("droppointdetect")
 
-[node name="Card" type="Control" parent="." unique_id=1031650757]
-custom_minimum_size = Vector2(100, 130)
-custom_maximum_size = Vector2(100, 130)
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1283924670]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -50.0
-offset_top = -65.0
-offset_right = 50.0
-offset_bottom = 65.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("2_ou0hx")
+expand_mode = 1
+stretch_mode = 5
 
-[node name="CardBg" type="Sprite2D" parent="Card" unique_id=1066262801]
-position = Vector2(50, 65)
-texture = ExtResource("2_3fjdc")
-region_enabled = true
-region_rect = Rect2(133, 4, 100, 128)
-
-[node name="CardElement" type="Sprite2D" parent="Card" unique_id=1881509026]
-position = Vector2(50, 2)
-scale = Vector2(1.1, 1.1)
+[node name="CardElement" type="Sprite2D" parent="." unique_id=1881509026]
+position = Vector2(100.50001, 14.499956)
+scale = Vector2(2.75, 2.75)
 texture = ExtResource("2_3fjdc")
 region_enabled = true
 region_rect = Rect2(399, 218, 20, 20)
 
-[node name="Costlbl" type="Label" parent="Card/CardElement" unique_id=1579884996]
+[node name="Costlbl" type="Label" parent="CardElement" unique_id=1579884996]
 custom_minimum_size = Vector2(25, 25)
 custom_maximum_size = Vector2(25, 25)
 anchors_preset = -1
@@ -54,10 +63,12 @@ grow_horizontal = 2
 grow_vertical = 2
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
-[node name="art_img" type="Sprite2D" parent="Card" unique_id=1586247003]
+[node name="art_img" type="Sprite2D" parent="." unique_id=1586247003]
+position = Vector2(-100, -150)
 
-[node name="card_name" type="Label" parent="Card" unique_id=656467333]
+[node name="card_name" type="Label" parent="." unique_id=656467333]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -70,3 +81,47 @@ offset_right = 20.0
 offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="droppointdetect" type="Area2D" parent="." unique_id=1113802292]
+collision_mask = 2
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="droppointdetect" unique_id=969692785]
+position = Vector2(99.5, 149)
+shape = SubResource("RectangleShape2D_44wmb")
+
+[node name="Label" type="Label" parent="." unique_id=1103442016]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.4
+anchor_top = 0.683
+anchor_right = 0.6
+anchor_bottom = 0.76000005
+offset_top = 0.099990845
+offset_bottom = -1.5258789e-05
+grow_vertical = 0
+
+[node name="StateMachine" type="Node" parent="." unique_id=991086945 node_paths=PackedStringArray("initial_state")]
+script = ExtResource("4_cgisx")
+initial_state = NodePath("CardBaseState")
+
+[node name="CardBaseState" type="Node" parent="StateMachine" unique_id=1714715079]
+script = ExtResource("5_jdb31")
+
+[node name="CardClickedState" type="Node" parent="StateMachine" unique_id=1704132125]
+script = ExtResource("6_2fqyy")
+state = 1
+
+[node name="CardDragState" type="Node" parent="StateMachine" unique_id=83321694]
+script = ExtResource("7_35gup")
+state = 2
+
+[node name="CardReleaseState" type="Node" parent="StateMachine" unique_id=444153244]
+script = ExtResource("8_jm703")
+state = 3
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
