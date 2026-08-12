@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dxnuo7ny88fe4"]
 
 [ext_resource type="Script" uid="uid://ry5tr0kd3wkx" path="res://Scripts/UI/Zone Screen Scripts/zone_ui_script.gd" id="1_wcg0n"]
-[ext_resource type="Script" uid="uid://c7tgktjs3bn1s" path="res://Resources/Zones/zone_resource_script.gd" id="2_8njlk"]
+[ext_resource type="Script" uid="uid://c7tgktjs3bn1s" path="res://Scripts/Zone/zone_resource_script.gd" id="2_8njlk"]
 [ext_resource type="Texture2D" uid="uid://8jp4l5hp8eb8" path="res://Assets/Art/Background images/Placeholder/swamp.png" id="2_os60k"]
 [ext_resource type="Resource" uid="uid://7ewwtrfxt6hj" path="res://Resources/Zones/swamp.tres" id="3_2xkba"]
 [ext_resource type="Resource" uid="uid://8whkm82da4hs" path="res://Resources/Zones/desert.tres" id="4_oemnt"]

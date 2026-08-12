@@ -40,5 +40,4 @@ func change_zone(step:int) ->void:
 
 
 func _on_battle_button_pressed() -> void:
-	var deck = DeckList.new()
-	deck.build_from_default(starter_deck.default_deck)
+	get_tree().change_scene_to_file("res://Scenes/UI/Battle Scene/BattleScene.tscn")

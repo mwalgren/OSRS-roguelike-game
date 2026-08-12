@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Character" format=3 uid="uid://bq03sp7faibcd"]
+
+[ext_resource type="Resource" uid="uid://c5jbf0ubjhhm0" path="res://Resources/Deck/starter_deck.tres" id="1_0yyrc"]
+[ext_resource type="Script" uid="uid://cvhtxqq231hvu" path="res://Scripts/Player/new_player_creation.gd" id="1_fypc0"]
+
+[resource]
+script = ExtResource("1_fypc0")
+character_name = "Michael"
+base_deck = ExtResource("1_0yyrc")
+metadata/_custom_type_script = "uid://cvhtxqq231hvu"

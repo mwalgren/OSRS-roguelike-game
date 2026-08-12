@@ -1,0 +1,99 @@
+[gd_scene format=3 uid="uid://befhhyprg7st7"]
+
+[ext_resource type="Script" uid="uid://b1dlp3duchpmr" path="res://Scripts/Battle/combat_manager.gd" id="1_ch27f"]
+[ext_resource type="Script" uid="uid://dat1b3b3f1pet" path="res://Scripts/UI/Battle/battle_scene.gd" id="1_kiq2u"]
+[ext_resource type="PackedScene" uid="uid://clqs27kpqrv8b" path="res://Scenes/UI/Hand/HandUi.tscn" id="2_617pg"]
+[ext_resource type="Texture2D" uid="uid://8jp4l5hp8eb8" path="res://Assets/Art/Background images/Placeholder/swamp.png" id="2_ch63h"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0t348"]
+size = Vector2(1897, 645)
+
+[node name="BattleScene" type="Control" unique_id=798933934 node_paths=PackedStringArray("CombatMngr", "enemy_spawn_point", "player_spawn_point", "vbox")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_kiq2u")
+CombatMngr = NodePath("CombatManager")
+enemy_spawn_point = NodePath("EnemySpawn")
+player_spawn_point = NodePath("PlayerSpawn")
+vbox = NodePath("debug/VBoxContainer")
+hand_container = ExtResource("2_617pg")
+
+[node name="CombatManager" type="Node2D" parent="." unique_id=387170660]
+script = ExtResource("1_ch27f")
+
+[node name="BG" type="TextureRect" parent="." unique_id=1535242418]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_ch63h")
+
+[node name="EnemySpawn" type="Marker2D" parent="." unique_id=1694336406]
+position = Vector2(1629, 726)
+
+[node name="PlayerSpawn" type="Marker2D" parent="." unique_id=1352038865]
+position = Vector2(297, 724)
+
+[node name="PlayableArea" type="Area2D" parent="." unique_id=647094680]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayableArea" unique_id=1449764416]
+position = Vector2(959.5, 342.5)
+shape = SubResource("RectangleShape2D_0t348")
+
+[node name="debug" type="Control" parent="." unique_id=1097998953]
+custom_minimum_size = Vector2(200, 200)
+custom_maximum_size = Vector2(200, 200)
+layout_mode = 1
+anchor_left = 0.896
+anchor_top = 0.81500006
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -0.32006836
+offset_top = -0.20007324
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="debug" unique_id=2127480792]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -1.01
+anchor_top = -0.595
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="." unique_id=1534487972]
+custom_minimum_size = Vector2(150, 50)
+custom_maximum_size = Vector2(150, 50)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.92200005
+anchor_top = 0.47700003
+anchor_right = 0.994
+anchor_bottom = 0.523
+offset_left = 141.75989
+offset_top = 20.839966
+offset_right = 11.52002
+offset_bottom = -20.840027
+grow_horizontal = 0
+grow_vertical = 2
+text = "Draw"
+
+[node name="HandUi" parent="." unique_id=594331797 instance=ExtResource("2_617pg")]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.81500006
+anchor_bottom = 1.0
+offset_top = -0.20007324
+offset_bottom = 0.0
+grow_vertical = 0
+
+[connection signal="hand_changed" from="CombatManager" to="HandUi" method="_on_combat_manager_hand_changed"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

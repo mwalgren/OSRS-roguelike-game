@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://dpireqhdii4ht"]
+
+[ext_resource type="Script" uid="uid://dkkwb5kbx2lh5" path="res://Scripts/Card/card_view.gd" id="1_3fjdc"]
+[ext_resource type="Texture2D" uid="uid://dytryfbkmqn20" path="res://Assets/Art/Card/bg/pixelCardAssest.png" id="2_3fjdc"]
+
+[node name="CardView" type="Control" unique_id=823981040 node_paths=PackedStringArray("art", "costlbl", "namelbl")]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_3fjdc")
+art = NodePath("Card/art_img")
+costlbl = NodePath("Card/CardElement/Costlbl")
+namelbl = NodePath("Card/card_name")
+
+[node name="Card" type="Control" parent="." unique_id=1031650757]
+custom_minimum_size = Vector2(100, 130)
+custom_maximum_size = Vector2(100, 130)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -50.0
+offset_top = -65.0
+offset_right = 50.0
+offset_bottom = 65.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CardBg" type="Sprite2D" parent="Card" unique_id=1066262801]
+position = Vector2(50, 65)
+texture = ExtResource("2_3fjdc")
+region_enabled = true
+region_rect = Rect2(133, 4, 100, 128)
+
+[node name="CardElement" type="Sprite2D" parent="Card" unique_id=1881509026]
+position = Vector2(50, 2)
+scale = Vector2(1.1, 1.1)
+texture = ExtResource("2_3fjdc")
+region_enabled = true
+region_rect = Rect2(399, 218, 20, 20)
+
+[node name="Costlbl" type="Label" parent="Card/CardElement" unique_id=1579884996]
+custom_minimum_size = Vector2(25, 25)
+custom_maximum_size = Vector2(25, 25)
+anchors_preset = -1
+anchor_left = -0.125
+anchor_top = -0.125
+anchor_right = 1.125
+anchor_bottom = 1.125
+offset_left = -10.0
+offset_top = -10.909088
+offset_right = -10.0
+offset_bottom = -10.909088
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="art_img" type="Sprite2D" parent="Card" unique_id=1586247003]
+
+[node name="card_name" type="Label" parent="Card" unique_id=656467333]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2

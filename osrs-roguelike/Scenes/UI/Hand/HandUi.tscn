@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://clqs27kpqrv8b"]
+
+[ext_resource type="Script" uid="uid://bxwf18iir7ndv" path="res://Scripts/UI/Hand/hand_ui.gd" id="1_t7meo"]
+[ext_resource type="PackedScene" uid="uid://dpireqhdii4ht" path="res://Scenes/UI/Card/CardView.tscn" id="2_dwo1m"]
+
+[node name="HandUi" type="Control" unique_id=594331797 node_paths=PackedStringArray("container")]
+custom_minimum_size = Vector2(900, 200)
+custom_maximum_size = Vector2(900, 200)
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -450.0
+offset_top = -100.0
+offset_right = 450.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_t7meo")
+cardscene = ExtResource("2_dwo1m")
+container = NodePath("Control")
+
+[node name="Control" type="Control" parent="." unique_id=1188265649]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

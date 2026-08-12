@@ -66,26 +66,6 @@ alignment = 1
 layout_mode = 2
 mouse_filter = 2
 
-[node name="InventoryButton" parent="MarginContainer/Menu" unique_id=409288812 instance=ExtResource("3_jnn5b")]
-layout_mode = 2
-mouse_filter = 2
-button_text = "INVENTORY"
-
-[node name="ShopButton" parent="MarginContainer/Menu" unique_id=723671178 instance=ExtResource("3_jnn5b")]
-layout_mode = 2
-mouse_filter = 2
-button_text = "SHOP"
-
-[node name="SettingsButton" parent="MarginContainer/Menu" unique_id=182884096 instance=ExtResource("3_jnn5b")]
-layout_mode = 2
-mouse_filter = 2
-button_text = "SETTINGS"
-
-[node name="ExitButton" parent="MarginContainer/Menu" unique_id=1319958175 instance=ExtResource("3_jnn5b")]
-layout_mode = 2
-mouse_filter = 2
-button_text = "EXIT"
-
 [node name="VersionLabel" type="Label" parent="." unique_id=2143155043]
 z_index = 10
 layout_mode = 0
