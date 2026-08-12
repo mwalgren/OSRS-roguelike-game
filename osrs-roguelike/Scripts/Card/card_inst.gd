@@ -6,3 +6,4 @@ class_name CardInstance
 var card_definition:Resource
 var dmg
 var armor
+var cost

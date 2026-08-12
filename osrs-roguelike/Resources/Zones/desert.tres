@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="zone" format=3 uid="uid://8whkm82da4hs"]
 
-[ext_resource type="Script" uid="uid://c7tgktjs3bn1s" path="res://Resources/Zones/zone_resource_script.gd" id="1_dhfxq"]
+[ext_resource type="Script" uid="uid://c7tgktjs3bn1s" path="res://Scripts/Zone/zone_resource_script.gd" id="1_dhfxq"]
 [ext_resource type="Texture2D" uid="uid://bnql8a1ophgte" path="res://Assets/Art/UI Icons/Placeholder/Zone 2 opps/desert lizard.png" id="2_04qv3"]
 [ext_resource type="Texture2D" uid="uid://51jp2a06s4vm" path="res://Assets/Art/UI Icons/Placeholder/Zone 2 opps/Scorpian.png" id="2_ohp3s"]
 [ext_resource type="Texture2D" uid="uid://jixi5nlmvjvl" path="res://Assets/Art/Background images/Placeholder/Alkrid.png" id="3_q1la5"]

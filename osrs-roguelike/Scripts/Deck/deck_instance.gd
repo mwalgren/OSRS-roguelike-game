@@ -44,7 +44,6 @@ func play_from_hand(card):
 func discard(card:CardInstance):
 	discard_array.append(card)
 
-
 func is_deck_empty() ->bool:
 	return deck_array.is_empty()
 

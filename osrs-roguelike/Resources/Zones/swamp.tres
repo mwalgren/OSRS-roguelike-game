@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="zone" format=3 uid="uid://7ewwtrfxt6hj"]
 
-[ext_resource type="Script" uid="uid://c7tgktjs3bn1s" path="res://Resources/Zones/zone_resource_script.gd" id="1_kbxqa"]
+[ext_resource type="Script" uid="uid://c7tgktjs3bn1s" path="res://Scripts/Zone/zone_resource_script.gd" id="1_kbxqa"]
 [ext_resource type="Texture2D" uid="uid://b6bd5w0ay50om" path="res://Assets/Art/UI Icons/Placeholder/Zone 1 Opps/chicken.png" id="2_4nrjc"]
 [ext_resource type="Texture2D" uid="uid://b41r73oac6b55" path="res://Assets/Art/UI Icons/Placeholder/Zone 1 Opps/goblin.png" id="3_mvfel"]
 [ext_resource type="Texture2D" uid="uid://bktb7lpq7xyfv" path="res://Assets/Art/UI Icons/Placeholder/Zone 1 Opps/cow.png" id="4_v5hv7"]

@@ -8,9 +8,6 @@ signal hand_changed(_hand_array)
 
 func _ready() -> void:
 	assemble_character(GameManager.character_state)
-	player_deck_inst.draw(5)
-	hand_changed.emit(player_deck_inst.hand_array)
-	print("player hand array: ", player_deck_inst.hand_array)
 
 
 func assemble_character(_character_state):

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://befhhyprg7st7"]
 
-[ext_resource type="Script" uid="uid://b1dlp3duchpmr" path="res://Scenes/UI/Battle Scene/combat_manager.gd" id="1_ch27f"]
-[ext_resource type="Script" uid="uid://dat1b3b3f1pet" path="res://Scenes/UI/Battle Scene/battle_scene.gd" id="1_kiq2u"]
+[ext_resource type="Script" uid="uid://b1dlp3duchpmr" path="res://Scripts/Battle/combat_manager.gd" id="1_ch27f"]
+[ext_resource type="Script" uid="uid://dat1b3b3f1pet" path="res://Scripts/UI/Battle/battle_scene.gd" id="1_kiq2u"]
 [ext_resource type="PackedScene" uid="uid://clqs27kpqrv8b" path="res://Scenes/UI/Hand/HandUi.tscn" id="2_617pg"]
 [ext_resource type="Texture2D" uid="uid://8jp4l5hp8eb8" path="res://Assets/Art/Background images/Placeholder/swamp.png" id="2_ch63h"]
 
@@ -88,11 +88,10 @@ text = "Draw"
 
 [node name="HandUi" parent="." unique_id=594331797 instance=ExtResource("2_617pg")]
 layout_mode = 1
+anchors_preset = -1
 anchor_top = 0.81500006
 anchor_bottom = 1.0
-offset_left = -0.7200012
 offset_top = -0.20007324
-offset_right = 0.7199707
 offset_bottom = 0.0
 grow_vertical = 0
 

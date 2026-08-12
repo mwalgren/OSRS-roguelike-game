@@ -20,4 +20,5 @@ func populate_deck_debugger(deck_inst): #debug
 
 
 func _on_button_pressed() -> void:
-	pass # Replace with function body.
+	CombatMngr.player_deck_inst.draw(1)
+	CombatMngr.hand_changed.emit(CombatMngr.player_deck_inst.hand_array)
