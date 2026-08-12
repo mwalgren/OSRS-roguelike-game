@@ -1,18 +1,24 @@
 extends Node2D
 
-var cost
-var dmg
-var armor
+var cost:int
+var dmg:int
+var armor:int
 
+@export var art:Sprite2D
+@export var costlbl:Label
+@export var namelbl:Label #debug
+
+func _ready() -> void:
+	add_to_group("player_card")
 
 func set_card_data(card):
-	cost = card.cost
-	dmg = card.dmg
-	armor = card.armor
+	cost = card.card_definition.cost
+	dmg = card.card_definition.dmg
+	armor = card.card_definition.armor
 
+func set_card_lbls(card):
+	costlbl.text = str(card.card_definition.cost)
+	namelbl.text = card.card_definition.card_name
 
 func _physics_process(delta: float) -> void:
 	pass
-
-func _on_area_2d_area_entered(area: Area2D) -> void:
-	pass # Replace with function body.

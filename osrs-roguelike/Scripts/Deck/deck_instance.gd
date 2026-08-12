@@ -57,5 +57,4 @@ func create_card_inst(card):
 	card_instance.card_definition = card
 	card_instance.dmg = card.dmg
 	card_instance.armor = card.armor
-	card_instance.target_type = card.target_type
 	return card_instance
