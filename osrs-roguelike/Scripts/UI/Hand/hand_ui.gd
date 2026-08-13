@@ -2,7 +2,6 @@ extends Control
 
 
 @export var cardscene:PackedScene
-@export var container:Control #not in use
 @export var hbox:HBoxContainer
 @export var fan_radius:float = 220.00 #not in use
 @export var fan_angle_deg:float = 90.00 #not in use
@@ -12,8 +11,7 @@ extends Control
 var cards:Array = []
 
 func _ready() -> void:
-	container.clip_contents
-
+	pass
 
 func add_card(card_instance) ->Node:
 	var card_node:Node = cardscene.instantiate()
@@ -74,6 +72,16 @@ func play_card_from_hand(card_node:Node) -> void:
 		#hbox.add_child(card)
 
 
+func reparent_to_container() ->void:
+		for child in hbox.get_children():
+			print("HBOX CHILDREN : ", child)
+			var card_ui := child as CardUi
+			card_ui.reparent_request.connect(_on_card_ui_reparent_requested)
+
 func _on_combat_manager_hand_changed(_hand_array: Variant) -> void:
-	add_card(_hand_array.pop_back()) # MUST BE CHANGED DEBUG ONLY 
+	add_card(_hand_array.pop_back())
+	reparent_to_container()
 	print("on_hand_changed")
+
+func _on_card_ui_reparent_requested(child:CardUi):
+	child.reparent(hbox)

@@ -93,6 +93,6 @@ func animate_button(
 	)
 
 
-func debug_print(character) -> void:
-	print("DECK : ", character.current_deck)
-	print("SKILLS ", character.skills)
+#func debug_print(character) -> void:
+	#print("DECK : ", character.current_deck)
+	#print("SKILLS ", character.skills)

@@ -10,7 +10,7 @@ func enter() ->void:
 
 func on_input(event:InputEvent) ->void:
 	var mouse_motion = event is InputEventMouseMotion
-	var cancel = event.is_action_pressed("ui_cancel")
+	var cancel = event.is_action_pressed("mouse_right")
 	var confirm = event.is_action_released("mouse_left") or event.is_action_pressed("mouse_left")
 	
 	if mouse_motion:

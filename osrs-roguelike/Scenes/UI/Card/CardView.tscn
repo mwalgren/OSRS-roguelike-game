@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://dpireqhdii4ht"]
 
-[ext_resource type="Script" uid="uid://dkkwb5kbx2lh5" path="res://Scripts/Card/card_view.gd" id="1_3fjdc"]
+[ext_resource type="Script" uid="uid://dkkwb5kbx2lh5" path="res://Scripts/Card/Ui/card_view.gd" id="1_3fjdc"]
 [ext_resource type="Texture2D" uid="uid://dytryfbkmqn20" path="res://Assets/Art/Card/bg/pixelCardAssest.png" id="2_3fjdc"]
 [ext_resource type="Texture2D" uid="uid://c3wcnvnl55tse" path="res://Assets/Art/Card/bg/card_bg_osrs.svg" id="2_ou0hx"]
-[ext_resource type="Script" uid="uid://e8duvgac8ln5" path="res://Scenes/UI/Card/card_state_machine.gd" id="4_cgisx"]
-[ext_resource type="Script" uid="uid://baxpx6bcdv76j" path="res://Scenes/UI/Card/card_base_state.gd" id="5_jdb31"]
-[ext_resource type="Script" uid="uid://clr0ehyvyl8am" path="res://Scenes/UI/Card/card_clicked_state.gd" id="6_2fqyy"]
-[ext_resource type="Script" uid="uid://dn3lv0nxcrhcp" path="res://Scenes/UI/Card/card_drag_state.gd" id="7_35gup"]
-[ext_resource type="Script" uid="uid://coh1ig5krrf1l" path="res://Scenes/UI/Card/card_release_state.gd" id="8_jm703"]
+[ext_resource type="Script" uid="uid://e8duvgac8ln5" path="res://Scripts/Card/CardStates/card_state_machine.gd" id="4_cgisx"]
+[ext_resource type="Script" uid="uid://baxpx6bcdv76j" path="res://Scripts/Card/CardStates/card_base_state.gd" id="5_jdb31"]
+[ext_resource type="Script" uid="uid://clr0ehyvyl8am" path="res://Scripts/Card/CardStates/card_clicked_state.gd" id="6_2fqyy"]
+[ext_resource type="Script" uid="uid://dn3lv0nxcrhcp" path="res://Scripts/Card/CardStates/card_drag_state.gd" id="7_35gup"]
+[ext_resource type="Script" uid="uid://coh1ig5krrf1l" path="res://Scripts/Card/CardStates/card_release_state.gd" id="8_jm703"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_44wmb"]
 size = Vector2(195, 276)
