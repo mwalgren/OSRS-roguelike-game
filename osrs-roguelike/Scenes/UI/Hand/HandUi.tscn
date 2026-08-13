@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://bxwf18iir7ndv" path="res://Scripts/UI/Hand/hand_ui.gd" id="1_t7meo"]
 [ext_resource type="PackedScene" uid="uid://dpireqhdii4ht" path="res://Scenes/UI/Card/CardView.tscn" id="2_dwo1m"]
 
-[node name="HandUi" type="Control" unique_id=594331797 node_paths=PackedStringArray("container")]
+[node name="HandUi" type="Control" unique_id=594331797 node_paths=PackedStringArray("hbox")]
 custom_minimum_size = Vector2(900, 200)
 custom_maximum_size = Vector2(900, 200)
 layout_mode = 3
@@ -20,9 +20,11 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_t7meo")
 cardscene = ExtResource("2_dwo1m")
-container = NodePath("Control")
+hbox = NodePath("HBoxContainer")
+fan_radius = 245.0
+fan_angle_deg = 30.0
 
-[node name="Control" type="Control" parent="." unique_id=1188265649]
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=378422168]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

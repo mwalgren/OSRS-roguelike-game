@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://8jp4l5hp8eb8" path="res://Assets/Art/Background images/Placeholder/swamp.png" id="2_ch63h"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0t348"]
-size = Vector2(1897, 645)
+size = Vector2(1897, 485)
 
 [node name="BattleScene" type="Control" unique_id=798933934 node_paths=PackedStringArray("CombatMngr", "enemy_spawn_point", "player_spawn_point", "vbox")]
 layout_mode = 3
@@ -41,9 +41,10 @@ position = Vector2(1629, 726)
 position = Vector2(297, 724)
 
 [node name="PlayableArea" type="Area2D" parent="." unique_id=647094680]
+collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayableArea" unique_id=1449764416]
-position = Vector2(959.5, 342.5)
+position = Vector2(959.5, 262.5)
 shape = SubResource("RectangleShape2D_0t348")
 
 [node name="debug" type="Control" parent="." unique_id=1097998953]
@@ -86,8 +87,9 @@ grow_horizontal = 0
 grow_vertical = 2
 text = "Draw"
 
-[node name="HandUi" parent="." unique_id=594331797 instance=ExtResource("2_617pg")]
-layout_mode = 1
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=749199112 groups=["ui_layer"]]
+
+[node name="HandUi" parent="CanvasLayer" unique_id=594331797 instance=ExtResource("2_617pg")]
 anchors_preset = -1
 anchor_top = 0.81500006
 anchor_bottom = 1.0
@@ -95,5 +97,5 @@ offset_top = -0.20007324
 offset_bottom = 0.0
 grow_vertical = 0
 
-[connection signal="hand_changed" from="CombatManager" to="HandUi" method="_on_combat_manager_hand_changed"]
+[connection signal="hand_changed" from="CombatManager" to="CanvasLayer/HandUi" method="_on_combat_manager_hand_changed"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
