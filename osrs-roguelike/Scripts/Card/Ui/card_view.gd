@@ -9,6 +9,7 @@ var armor:int
 @export var costlbl:Label
 @export var namelbl:Label #debug
 @export var statelbl:Label
+@onready var targets:Array[Node] = []
 
 @export var card_state_machine:CardStateMachine
 @export var drop_point_detector:Area2D
@@ -40,3 +41,11 @@ func _on_mouse_entered() ->void:
 
 func _on_mouse_exited() ->void:
 	card_state_machine.on_mouse_exited()
+
+
+func _on_droppointdetect_area_entered(area: Area2D) -> void:
+	if not targets.has(area):
+		targets.append(area)
+
+func _on_droppointdetect_area_exited(area: Area2D) -> void:
+	targets.erase(area)
