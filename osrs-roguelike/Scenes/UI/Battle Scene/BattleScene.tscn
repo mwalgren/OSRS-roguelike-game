@@ -40,7 +40,7 @@ position = Vector2(1629, 726)
 [node name="PlayerSpawn" type="Marker2D" parent="." unique_id=1352038865]
 position = Vector2(297, 724)
 
-[node name="PlayableArea" type="Area2D" parent="." unique_id=647094680]
+[node name="PlayableArea" type="Area2D" parent="." unique_id=647094680 groups=["playable_area"]]
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayableArea" unique_id=1449764416]
@@ -98,4 +98,5 @@ offset_bottom = 0.0
 grow_vertical = 0
 
 [connection signal="hand_changed" from="CombatManager" to="CanvasLayer/HandUi" method="_on_combat_manager_hand_changed"]
+[connection signal="area_entered" from="PlayableArea" to="CombatManager" method="_on_playable_area_area_entered"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

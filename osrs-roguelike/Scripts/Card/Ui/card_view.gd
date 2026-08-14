@@ -17,9 +17,8 @@ var armor:int
 signal reparent_request(card_ui:CardUi)
 
 func _ready() -> void:
-	add_to_group("player_card")
 	card_state_machine.init(self)
-
+	card_state_machine.get_child(3).card_released.connect(func(): drop_point_detector.monitorable = true)
 
 func set_card_data(card):
 	cost = card.card_definition.cost
@@ -42,10 +41,11 @@ func _on_mouse_entered() ->void:
 func _on_mouse_exited() ->void:
 	card_state_machine.on_mouse_exited()
 
-
 func _on_droppointdetect_area_entered(area: Area2D) -> void:
 	if not targets.has(area):
 		targets.append(area)
+	if area.is_in_group("playable_area"):
+		print("HELLO")
 
 func _on_droppointdetect_area_exited(area: Area2D) -> void:
 	targets.erase(area)

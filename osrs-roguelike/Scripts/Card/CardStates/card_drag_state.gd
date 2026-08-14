@@ -3,6 +3,7 @@ extends CardState
 const DRAG_MINIMUM:= 0.05
 var min_drag_time_lapsed := false
 
+
 func enter() ->void:
 	var ui_layer := get_tree().get_first_node_in_group("ui_layer")
 	if ui_layer:
