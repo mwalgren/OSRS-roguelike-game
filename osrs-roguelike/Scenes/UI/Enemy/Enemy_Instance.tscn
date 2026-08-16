@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://dfufr3scndmwe"]
+
+[ext_resource type="Script" uid="uid://c6xakhq0rdowv" path="res://Scenes/UI/Enemy/enemy_instance.gd" id="1_65vji"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hw4o8"]
+bg_color = Color(0.96995145, 0.3730171, 0.36366633, 1)
+
+[node name="EnemyInstance" type="Control" unique_id=99443829 node_paths=PackedStringArray("enemy_art", "health_bar")]
+custom_minimum_size = Vector2(150, 150)
+custom_maximum_size = Vector2(150, 150)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_65vji")
+enemy_art = NodePath("TextureRect")
+health_bar = NodePath("ProgressBar")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1022054651]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=1693503641]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = -0.32000002
+anchor_right = 1.0
+anchor_bottom = -0.14
+grow_horizontal = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_hw4o8")
+show_percentage = false
+
+[connection signal="value_changed" from="ProgressBar" to="." method="_on_progress_bar_value_changed"]

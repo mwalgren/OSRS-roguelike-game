@@ -3,10 +3,7 @@ extends Control
 
 @export var cardscene:PackedScene
 @export var hbox:HBoxContainer
-@export var fan_radius:float = 220.00 #not in use
-@export var fan_angle_deg:float = 90.00 #not in use
-@export var card_spacing_y:float = 20.00 #not in use
-@export var animation_time = 0.15 #not in use
+@export var combatmanager:Node2D
 
 var cards:Array = []
 
@@ -16,6 +13,7 @@ func _ready() -> void:
 func add_card(card_instance) ->Node:
 	var card_node:Node = cardscene.instantiate()
 	card_node.name = "Card_%s" % cards.size()
+	card_node.card_played.connect(combatmanager.on_card_played)
 	hbox.add_child(card_node)
 	card_node.set_card_data(card_instance)
 	card_node.set_card_lbls(card_instance)

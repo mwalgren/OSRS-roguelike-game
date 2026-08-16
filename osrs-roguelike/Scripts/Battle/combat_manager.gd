@@ -3,12 +3,13 @@ extends Node2D
 
 var player_deck_inst:DeckInstance
 
+
 signal hand_changed(_hand_array)
 
 
 func _ready() -> void:
 	assemble_character(GameManager.character_state)
-
+	
 
 func assemble_character(_character_state):
 	player_deck_inst = DeckInstance.new()
@@ -19,4 +20,8 @@ func assemble_character(_character_state):
 
 func _on_playable_area_area_entered(area: Area2D) -> void:
 	if area.is_in_group("player_card"):
-		print("CARD ENTERED")
+		print("PLAYER CARD ENTERED")
+		
+
+func on_card_played(card):
+	print("combat manager received: ", card)

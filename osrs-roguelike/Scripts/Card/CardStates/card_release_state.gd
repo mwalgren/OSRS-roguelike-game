@@ -1,7 +1,9 @@
 extends CardState
 
 var played:bool
+
 signal card_released
+signal card_played(card)
 
 func enter() ->void:
 	card_ui.statelbl.text = "RELEASED"
@@ -10,6 +12,7 @@ func enter() ->void:
 		played = true
 		print("played card for target", card_ui.targets)
 	card_released.emit()
+	card_played.emit(card_ui)
 
 func on_input(_even:InputEvent):
 	if played:
