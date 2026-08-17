@@ -3,31 +3,32 @@ extends Node2D
 
 var player_deck_inst:DeckInstance
 
-
-signal hand_changed(_hand_array)
+@export var hand_ui:Control
 
 var current_enemy_target
 var player
 
 func _ready() -> void:
-	assemble_character(GameManager.character_state)
+	build_character(GameManager.character_state)
 	
 
-func assemble_character(_character_state):
+func build_character(character_state:CharacterState):
 	player_deck_inst = DeckInstance.new()
-	var _decklist = DeckList.new()
-	_decklist.build_from_default(_character_state.current_deck)
-	player_deck_inst.build_from_decklist(_decklist)
-
+	player_deck_inst.build_from_decklist(character_state.current_deck)
+	player_deck_inst.hand_changed.connect(hand_ui._on_combat_manager_hand_changed)
+	
 
 func _on_playable_area_area_entered(area: Area2D) -> void:
-	if area.is_in_group("player_card"):
-		print("PLAYER CARD ENTERED")
+	pass
 
 
 func on_card_played(card):
-	print("combat manager received: ", card)
+	player_deck_inst.play_from_hand(card)
 	if card.dmg:
 		current_enemy_target.take_damage(card.dmg)
 	if card.armor > 0 : 
 		player.apply_armor(card.armor)
+
+
+func draw_card(n:int = 1):
+	player_deck_inst.draw(n)

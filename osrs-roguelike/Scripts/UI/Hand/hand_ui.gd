@@ -14,12 +14,11 @@ func add_card(card_instance) ->Node:
 	var card_node:Node = cardscene.instantiate()
 	card_node.name = "Card_%s" % cards.size()
 	card_node.card_played.connect(combatmanager.on_card_played)
+	#card_node.card_played.connect(play_card_from_hand)
 	hbox.add_child(card_node)
 	card_node.set_card_data(card_instance)
 	card_node.set_card_lbls(card_instance)
-	#card_node.hand = self
 	cards.append(card_node)
-	#arrange_cards()
 	return card_node
 
 
@@ -59,27 +58,18 @@ func play_card_from_hand(card_node:Node) -> void:
 			#cards[i].rotation = deg_to_rad(rot)
 			#cards[i].z_index = z
 
-#func update_hand(hand_array):
-	#for c in hbox.get_children():
-		#c.queue_free()
-	#for i in hand_array.size():
-		#print(i)
-		#var card = cardscene.instantiate()
-		#card.set_card_data(hand_array[i])
-		#card.set_card_lbls(hand_array[i])
-		#hbox.add_child(card)
 
 
 func reparent_to_container() ->void:
 		for child in hbox.get_children():
-			print("HBOX CHILDREN : ", child)
 			var card_ui := child as CardUi
-			#card_ui.reparent_request.connect(_on_card_ui_reparent_requested)
 
 func _on_combat_manager_hand_changed(_hand_array: Variant) -> void:
-	add_card(_hand_array.pop_back())
-	reparent_to_container()
-	print("on_hand_changed")
+	for c in hbox.get_children():
+		c.queue_free()
+	cards.clear()
+	for card_inst in _hand_array:
+		add_card(card_inst)
 
 func _on_card_ui_reparent_requested(child:CardUi):
 	child.reparent(hbox)

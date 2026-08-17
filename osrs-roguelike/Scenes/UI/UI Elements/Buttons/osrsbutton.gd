@@ -62,7 +62,6 @@ func _on_button_up() -> void:
 
 
 func _on_button_pressed() -> void:
-	print(button_text + " CLICKED")
 	pressed.emit()
 	var new_run = GameManager.start_new_run()
 	get_tree().change_scene_to_file("res://Scenes/UI/Zone Screen/Zone_screen.tscn")
@@ -91,8 +90,3 @@ func animate_button(
 		target_color,
 		0.08
 	)
-
-
-#func debug_print(character) -> void:
-	#print("DECK : ", character.current_deck)
-	#print("SKILLS ", character.skills)

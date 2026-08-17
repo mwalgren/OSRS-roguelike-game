@@ -1,6 +1,7 @@
 extends RefCounted
 class_name DeckInstance
 
+signal hand_changed(hand_array)
 
 var deck_array:Array = []
 var hand_array:Array = []
@@ -12,16 +13,15 @@ func reset_deck():
 	hand_array = []
 
 
-func build_from_decklist(deck:DeckList):
-	if !deck:
-		return
-	var curr_deck = deck.as_manifest()
-	for id in curr_deck.keys():
-		var card = CardRegistry.get_card(id)
-		var count = curr_deck[id]
-		for n in range(count):
-			var card_instance = create_card_inst(card)
-			deck_array.append(card_instance)
+func build_from_decklist(deck):
+	deck_array.clear()
+	hand_array.clear()
+	discard_array.clear()
+	
+	for card_id in deck:
+		for _i in deck[card_id]:
+			var data:CardData = CardRegistry.get_card(card_id)
+			deck_array.append(create_card_inst(data))
 	deck_array.shuffle()
 
 
@@ -35,11 +35,17 @@ func draw(n:int = 1):
 	for num in range(n):
 		var card_to_draw = deck_array.pop_front()
 		hand_array.append(card_to_draw)
+	hand_changed.emit(hand_array)
+
 
 func play_from_hand(card):
 	if hand_array.has(card):
 			hand_array.erase(card)
+			discard(card)
+			hand_changed.emit(hand_array)
+			print("Discarded :", card)
 	else: push_error("Card not found in Hand Array")
+
 
 func discard(card:CardInstance):
 	discard_array.append(card)

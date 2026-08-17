@@ -17,7 +17,6 @@ func set_stats(character):
 
 func take_damage(value):
 	var final_dmg = randi_range(0, value)
-	print("Goblin set to take : ", final_dmg)
 	if current_armor > 0:
 		current_hp -= (final_dmg - current_armor)
 	else: current_hp -= final_dmg

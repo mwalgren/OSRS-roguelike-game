@@ -4,6 +4,7 @@ class_name CardUi
 var cost:int
 var dmg:int
 var armor:int
+var card_instance
 
 @export var art:Sprite2D
 @export var costlbl:Label
@@ -24,6 +25,7 @@ func _ready() -> void:
 	card_state_released.card_played.connect(_on_release_state_card_played)
 
 func set_card_data(card):
+	card_instance = card
 	cost = card.card_definition.cost
 	dmg = card.card_definition.dmg
 	armor = card.card_definition.armor
@@ -47,8 +49,7 @@ func _on_mouse_exited() ->void:
 func _on_droppointdetect_area_entered(area: Area2D) -> void:
 	if not targets.has(area):
 		targets.append(area)
-	if area.is_in_group("playable_area"):
-		print("HELLO")
+
 
 func _on_droppointdetect_area_exited(area: Area2D) -> void:
 	targets.erase(area)
