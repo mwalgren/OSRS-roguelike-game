@@ -3,7 +3,10 @@
 [ext_resource type="Script" uid="uid://c6xakhq0rdowv" path="res://Scenes/UI/Enemy/enemy_instance.gd" id="1_65vji"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hw4o8"]
-bg_color = Color(0.96995145, 0.3730171, 0.36366633, 1)
+bg_color = Color(0.11304883, 0.11304883, 0.11304883, 0.81960785)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0t7rd"]
+bg_color = Color(0.99215686, 0.1764706, 0.16078432, 1)
 
 [node name="EnemyInstance" type="Control" unique_id=99443829 node_paths=PackedStringArray("enemy_art", "health_bar")]
 custom_minimum_size = Vector2(150, 150)
@@ -36,6 +39,5 @@ anchor_right = 1.0
 anchor_bottom = -0.14
 grow_horizontal = 2
 theme_override_styles/background = SubResource("StyleBoxFlat_hw4o8")
+theme_override_styles/fill = SubResource("StyleBoxFlat_0t7rd")
 show_percentage = false
-
-[connection signal="value_changed" from="ProgressBar" to="." method="_on_progress_bar_value_changed"]

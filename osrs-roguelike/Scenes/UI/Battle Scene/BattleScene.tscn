@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://clqs27kpqrv8b" path="res://Scenes/UI/Hand/HandUi.tscn" id="2_617pg"]
 [ext_resource type="Texture2D" uid="uid://8jp4l5hp8eb8" path="res://Assets/Art/Background images/Placeholder/swamp.png" id="2_ch63h"]
 [ext_resource type="PackedScene" uid="uid://dfufr3scndmwe" path="res://Scenes/UI/Enemy/Enemy_Instance.tscn" id="3_skdv5"]
+[ext_resource type="PackedScene" uid="uid://bywkevtxwd5l" path="res://Scenes/UI/Player/PlayerInstance.tscn" id="4_3vj6l"]
 [ext_resource type="Script" uid="uid://3wacqp5mbay6" path="res://Scenes/UI/Battle Scene/enemy_factory.gd" id="5_7m85r"]
 [ext_resource type="Resource" uid="uid://cucgrpl84s2q8" path="res://Resources/Enemies/Goblin.tres" id="6_kul87"]
 
@@ -26,6 +27,7 @@ enemy_factory = NodePath("EnemyFactory")
 vbox = NodePath("debug/VBoxContainer")
 hand_container = ExtResource("2_617pg")
 enemy_instance = ExtResource("3_skdv5")
+player_instance = ExtResource("4_3vj6l")
 
 [node name="CombatManager" type="Node2D" parent="." unique_id=387170660]
 script = ExtResource("1_ch27f")

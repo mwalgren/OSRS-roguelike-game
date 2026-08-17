@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Enemy" format=3 uid="uid://bwjswtf5j6ny3"]
+
+[ext_resource type="Script" uid="uid://6xdxrrheysen" path="res://Scripts/Inventory/Item_Data/item_data.gd" id="1_ra4mq"]
+[ext_resource type="Texture2D" uid="uid://b6bd5w0ay50om" path="res://Assets/Art/UI Icons/Placeholder/Zone 1 Opps/chicken.png" id="2_2gkex"]
+[ext_resource type="Script" uid="uid://b3gqfalc2ugwd" path="res://Scripts/Enemies/enemy.gd" id="2_7rcsl"]
+
+[resource]
+script = ExtResource("2_7rcsl")
+max_hp = 3
+base_dmg = 1
+enemy_id = "E002"
+enemy_name = "Chicken"
+enemy_art = ExtResource("2_2gkex")
+metadata/_custom_type_script = "uid://b3gqfalc2ugwd"

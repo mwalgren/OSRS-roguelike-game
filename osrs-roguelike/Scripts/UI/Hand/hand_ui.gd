@@ -74,7 +74,7 @@ func reparent_to_container() ->void:
 		for child in hbox.get_children():
 			print("HBOX CHILDREN : ", child)
 			var card_ui := child as CardUi
-			card_ui.reparent_request.connect(_on_card_ui_reparent_requested)
+			#card_ui.reparent_request.connect(_on_card_ui_reparent_requested)
 
 func _on_combat_manager_hand_changed(_hand_array: Variant) -> void:
 	add_card(_hand_array.pop_back())

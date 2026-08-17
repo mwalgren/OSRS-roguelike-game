@@ -41,3 +41,4 @@ func change_zone(step:int) ->void:
 
 func _on_battle_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://Scenes/UI/Battle Scene/BattleScene.tscn")
+	GameManager.current_zone = zone_array[_current_zone_index]

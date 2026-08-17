@@ -1,0 +1,69 @@
+[gd_scene format=3 uid="uid://bywkevtxwd5l"]
+
+[ext_resource type="Script" uid="uid://dnab67o2l4mq4" path="res://Scenes/UI/Player/player_instance.gd" id="1_ps7oe"]
+[ext_resource type="Texture2D" uid="uid://bp75k8vhxirs7" path="res://Assets/Art/Player/ChatGPT Image Aug 17, 2026, 11_09_04 AM.png" id="2_yydo2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0yyrc"]
+bg_color = Color(0.13682574, 0.13682574, 0.13682568, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4fmhb"]
+bg_color = Color(0.7372549, 0.0627451, 0.06666667, 1)
+
+[node name="PlayerInstance" type="Control" unique_id=1399862252 node_paths=PackedStringArray("health_bar", "player_art", "armor_lbl")]
+custom_minimum_size = Vector2(150, 150)
+custom_maximum_size = Vector2(150, 150)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ps7oe")
+health_bar = NodePath("ProgressBar")
+player_art = NodePath("TextureRect")
+armor_lbl = NodePath("ColorRect/Label")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1654533899]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_yydo2")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=764536494]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = -0.25300002
+anchor_right = 1.0
+anchor_bottom = -0.07300001
+offset_top = -0.049995422
+offset_bottom = -0.049999237
+grow_horizontal = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_0yyrc")
+theme_override_styles/fill = SubResource("StyleBoxFlat_4fmhb")
+allow_greater = true
+show_percentage = false
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=511773647]
+layout_mode = 0
+offset_left = -23.0
+offset_top = -37.0
+offset_right = -1.0
+offset_bottom = -13.0
+
+[node name="Label" type="Label" parent="ColorRect" unique_id=495482687]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1

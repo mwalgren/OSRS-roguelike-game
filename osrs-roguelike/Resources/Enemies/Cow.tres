@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Enemy" format=3 uid="uid://b4k5r7ox7s1ul"]
+
+[ext_resource type="Script" uid="uid://6xdxrrheysen" path="res://Scripts/Inventory/Item_Data/item_data.gd" id="1_kxo15"]
+[ext_resource type="Texture2D" uid="uid://bktb7lpq7xyfv" path="res://Assets/Art/UI Icons/Placeholder/Zone 1 Opps/cow.png" id="2_scsfr"]
+[ext_resource type="Script" uid="uid://b3gqfalc2ugwd" path="res://Scripts/Enemies/enemy.gd" id="2_v155j"]
+
+[resource]
+script = ExtResource("2_v155j")
+max_hp = 7
+base_dmg = 1
+enemy_id = "E003"
+enemy_name = "Cow"
+enemy_art = ExtResource("2_scsfr")
+metadata/_custom_type_script = "uid://b3gqfalc2ugwd"

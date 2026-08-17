@@ -1,24 +1,21 @@
 extends Control
-class_name EnemyInstance
+class_name PlayerUI
 
 var current_hp:int
 var current_armor:int
-var base_dmg:int
-var enemy_name:String
-@export var enemy_art:TextureRect
 @export var health_bar:ProgressBar
+@export var player_art:TextureRect
+@export var armor_lbl:Label
 
-
-func set_enemy_data(data):
-	current_armor = data.base_armor
-	current_hp = data.max_hp
-	base_dmg = data.base_dmg
-	enemy_name = data.enemy_name
-	enemy_art.texture = data.enemy_art
+func _ready() -> void:
 	health_bar.max_value = current_hp
 	health_bar.value = current_hp
 
-func take_damage(value:int):
+func set_stats(character):
+	current_armor = character.armor
+	current_hp = character.hp
+
+func take_damage(value):
 	var final_dmg = randi_range(0, value)
 	print("Goblin set to take : ", final_dmg)
 	if current_armor > 0:
@@ -28,9 +25,14 @@ func take_damage(value:int):
 	set_health(current_hp)
 	print(current_hp)
 
+
 func set_health(new_value):
 	var tween:Tween = create_tween()
 	
 	tween.tween_property(health_bar, "value", new_value, 0.3) \
 	.set_trans(Tween.TRANS_CUBIC) \
 	.set_ease(Tween.EASE_OUT)
+
+func apply_armor(value):
+	current_armor += value
+	armor_lbl.text = str(current_armor)
