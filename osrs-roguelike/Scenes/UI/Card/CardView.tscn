@@ -12,7 +12,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_44wmb"]
 size = Vector2(195, 276)
 
-[node name="CardView" type="Control" unique_id=435281631 node_paths=PackedStringArray("art", "costlbl", "namelbl", "statelbl", "card_state_machine", "drop_point_detector")]
+[node name="CardView" type="Control" unique_id=435281631 node_paths=PackedStringArray("art", "costlbl", "namelbl", "statelbl", "card_state_machine", "drop_point_detector", "card_state_released")]
 custom_minimum_size = Vector2(200, 300)
 custom_maximum_size = Vector2(200, 300)
 layout_mode = 3
@@ -27,6 +27,7 @@ namelbl = NodePath("card_name")
 statelbl = NodePath("Label")
 card_state_machine = NodePath("StateMachine")
 drop_point_detector = NodePath("droppointdetect")
+card_state_released = NodePath("StateMachine/CardReleaseState")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1283924670]
 layout_mode = 1
@@ -84,9 +85,8 @@ grow_vertical = 2
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="droppointdetect" type="Area2D" parent="." unique_id=1113802292]
+[node name="droppointdetect" type="Area2D" parent="." unique_id=1113802292 groups=["player_card"]]
 collision_mask = 2
-monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="droppointdetect" unique_id=969692785]
 position = Vector2(99.5, 149)
@@ -102,6 +102,8 @@ anchor_bottom = 0.76000005
 offset_top = 0.099990845
 offset_bottom = -1.5258789e-05
 grow_vertical = 0
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="StateMachine" type="Node" parent="." unique_id=991086945 node_paths=PackedStringArray("initial_state")]
 script = ExtResource("4_cgisx")

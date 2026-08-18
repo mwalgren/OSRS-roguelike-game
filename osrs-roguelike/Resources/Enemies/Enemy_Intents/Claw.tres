@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="IntentDef" format=3 uid="uid://cgs78rmbraxhj"]
+
+[ext_resource type="Texture2D" uid="uid://bxuwun34rmc13" path="res://Assets/Art/UI Icons/Placeholder/EnemyIntent/64x64/fc721.png" id="1_4510o"]
+[ext_resource type="Script" uid="uid://b6bmc3wp6d4m8" path="res://Scripts/Enemies/Enemy_intent.gd" id="1_a5vm3"]
+
+[resource]
+script = ExtResource("1_a5vm3")
+move_name = "Claw"
+intent_art = ExtResource("1_4510o")
+INTENT_TYPE = 0
+metadata/_custom_type_script = "uid://b6bmc3wp6d4m8"

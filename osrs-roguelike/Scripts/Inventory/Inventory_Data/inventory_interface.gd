@@ -21,7 +21,6 @@ func _ready() -> void:
 	else:
 		if not player_equipment.is_connected("emit_unequip_data", Callable(self,"_on_equipment_unequipped")):
 			player_equipment.connect("emit_unequip_data", Callable(self, "_on_equipment_unequipped"))
-			print("connected to equipment_unequipped")
 
 func set_player_inventory_data(inv_data:InventoryData) -> void:
 	test_player_inv_panel.set_inventory_data(inv_data)

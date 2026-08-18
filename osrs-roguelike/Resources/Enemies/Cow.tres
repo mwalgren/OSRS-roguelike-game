@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Enemy" format=3 uid="uid://b4k5r7ox7s1ul"]
+
+[ext_resource type="Resource" uid="uid://cgs78rmbraxhj" path="res://Resources/Enemies/Enemy_Intents/Claw.tres" id="2_rx6g7"]
+[ext_resource type="Texture2D" uid="uid://bktb7lpq7xyfv" path="res://Assets/Art/UI Icons/Placeholder/Zone 1 Opps/cow.png" id="2_scsfr"]
+[ext_resource type="Script" uid="uid://b3gqfalc2ugwd" path="res://Scripts/Enemies/enemy.gd" id="2_v155j"]
+[ext_resource type="Resource" uid="uid://b0t5ieh387r8i" path="res://Resources/Enemies/Enemy_Intents/Defense.tres" id="3_nd7tb"]
+
+[resource]
+script = ExtResource("2_v155j")
+enemy_id = "E003"
+enemy_name = "Cow"
+max_hp = 7
+base_dmg = 1
+enemy_move_pool = [ExtResource("2_rx6g7"), ExtResource("3_nd7tb")]
+enemy_art = ExtResource("2_scsfr")
+metadata/_custom_type_script = "uid://b3gqfalc2ugwd"

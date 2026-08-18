@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Enemy" format=3 uid="uid://cucgrpl84s2q8"]
+
+[ext_resource type="Script" uid="uid://6xdxrrheysen" path="res://Scripts/Inventory/Item_Data/item_data.gd" id="1_sele7"]
+[ext_resource type="Script" uid="uid://b3gqfalc2ugwd" path="res://Scripts/Enemies/enemy.gd" id="2_i6dql"]
+[ext_resource type="Resource" uid="uid://becx4uatvhf8c" path="res://Resources/Items/bronze_sword.tres" id="2_sm1jo"]
+[ext_resource type="Resource" uid="uid://lg4cfsg06qtq" path="res://Resources/Items/meat.tres" id="3_aiy86"]
+[ext_resource type="Texture2D" uid="uid://boejs38udmsm7" path="res://Assets/Art/Enemy Sprites/ChatGPT Image Aug 16, 2026, 11_05_15 AM.png" id="4_aiy86"]
+
+[resource]
+script = ExtResource("2_i6dql")
+max_hp = 5
+base_dmg = 2
+drop_table = Array[ExtResource("1_sele7")]([ExtResource("2_sm1jo"), ExtResource("3_aiy86")])
+enemy_id = "E001"
+enemy_name = "Goblin"
+enemy_art = ExtResource("4_aiy86")
+metadata/_custom_type_script = "uid://b3gqfalc2ugwd"

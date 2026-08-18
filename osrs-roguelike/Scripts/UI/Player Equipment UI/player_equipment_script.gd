@@ -21,7 +21,6 @@ func _ready() -> void:
 
 
 func equip(slot_data:SlotData):
-	print("equip func : working")
 	var type = slot_data.item_data.item_type
 	
 	if not slot_nodes.has(type):
@@ -41,4 +40,3 @@ func _on_slot_unequip(slot) -> void:
 	emit_unequip_data.emit(unequipped)
 	equipped.erase(t)
 	slot.clear_slot()
-	print("on_slot_unequip fired")

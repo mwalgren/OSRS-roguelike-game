@@ -4,11 +4,15 @@
 [ext_resource type="Script" uid="uid://dat1b3b3f1pet" path="res://Scripts/UI/Battle/battle_scene.gd" id="1_kiq2u"]
 [ext_resource type="PackedScene" uid="uid://clqs27kpqrv8b" path="res://Scenes/UI/Hand/HandUi.tscn" id="2_617pg"]
 [ext_resource type="Texture2D" uid="uid://8jp4l5hp8eb8" path="res://Assets/Art/Background images/Placeholder/swamp.png" id="2_ch63h"]
+[ext_resource type="PackedScene" uid="uid://dfufr3scndmwe" path="res://Scenes/UI/Enemy/Enemy_Instance.tscn" id="3_skdv5"]
+[ext_resource type="PackedScene" uid="uid://bywkevtxwd5l" path="res://Scenes/UI/Player/PlayerInstance.tscn" id="4_3vj6l"]
+[ext_resource type="Script" uid="uid://3wacqp5mbay6" path="res://Scenes/UI/Battle Scene/enemy_factory.gd" id="5_7m85r"]
+[ext_resource type="Script" uid="uid://dkwbo5mqxhcl4" path="res://Scenes/UI/Battle Scene/player_factory.gd" id="6_3vj6l"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0t348"]
 size = Vector2(1897, 485)
 
-[node name="BattleScene" type="Control" unique_id=798933934 node_paths=PackedStringArray("CombatMngr", "enemy_spawn_point", "player_spawn_point", "vbox")]
+[node name="BattleScene" type="Control" unique_id=798933934 node_paths=PackedStringArray("CombatManager", "deck_vbox", "hand_vbox")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -16,14 +20,32 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_kiq2u")
-CombatMngr = NodePath("CombatManager")
-enemy_spawn_point = NodePath("EnemySpawn")
-player_spawn_point = NodePath("PlayerSpawn")
-vbox = NodePath("debug/VBoxContainer")
+CombatManager = NodePath("CombatManager")
+deck_vbox = NodePath("debug/HBoxContainer/deck")
+hand_vbox = NodePath("debug/HBoxContainer/hand")
 hand_container = ExtResource("2_617pg")
 
-[node name="CombatManager" type="Node2D" parent="." unique_id=387170660]
+[node name="EnemyFactory" type="Node" parent="." unique_id=2044731732 node_paths=PackedStringArray("enemy_spawn_point", "CombatManager")]
+script = ExtResource("5_7m85r")
+enemy_spawn_point = NodePath("../EnemySpawn")
+CombatManager = NodePath("../CombatManager")
+enemy_instance = ExtResource("3_skdv5")
+
+[node name="EnemySpawn" type="Marker2D" parent="." unique_id=1694336406]
+position = Vector2(1629, 726)
+
+[node name="PlayerFactory" type="Node" parent="." unique_id=1573222314 node_paths=PackedStringArray("CombatManager", "player_spawn_point")]
+script = ExtResource("6_3vj6l")
+CombatManager = NodePath("../CombatManager")
+player_spawn_point = NodePath("../PlayerSpawn")
+player_instance = ExtResource("4_3vj6l")
+
+[node name="PlayerSpawn" type="Marker2D" parent="." unique_id=1352038865]
+position = Vector2(297, 724)
+
+[node name="CombatManager" type="Node2D" parent="." unique_id=387170660 node_paths=PackedStringArray("hand_ui")]
 script = ExtResource("1_ch27f")
+hand_ui = NodePath("../CanvasLayer/HandUi")
 
 [node name="BG" type="TextureRect" parent="." unique_id=1535242418]
 layout_mode = 1
@@ -34,13 +56,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_ch63h")
 
-[node name="EnemySpawn" type="Marker2D" parent="." unique_id=1694336406]
-position = Vector2(1629, 726)
-
-[node name="PlayerSpawn" type="Marker2D" parent="." unique_id=1352038865]
-position = Vector2(297, 724)
-
-[node name="PlayableArea" type="Area2D" parent="." unique_id=647094680]
+[node name="PlayableArea" type="Area2D" parent="." unique_id=647094680 groups=["playable_area"]]
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayableArea" unique_id=1449764416]
@@ -48,27 +64,31 @@ position = Vector2(959.5, 262.5)
 shape = SubResource("RectangleShape2D_0t348")
 
 [node name="debug" type="Control" parent="." unique_id=1097998953]
-custom_minimum_size = Vector2(200, 200)
-custom_maximum_size = Vector2(200, 200)
+custom_minimum_size = Vector2(200, 900)
+custom_maximum_size = Vector2(200, 900)
 layout_mode = 1
-anchor_left = 0.896
-anchor_top = 0.81500006
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -0.32006836
-offset_top = -0.20007324
-grow_horizontal = 0
-grow_vertical = 0
+anchor_top = 0.083000004
+anchor_right = 0.104
+anchor_bottom = 0.91700006
+offset_top = -89.64001
+offset_right = -199.68001
+offset_bottom = 89.63995
+grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="debug" unique_id=2127480792]
+[node name="HBoxContainer" type="HBoxContainer" parent="debug" unique_id=1517628347]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -1.01
-anchor_top = -0.595
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_right = 9.016001
+anchor_bottom = 0.33
+offset_right = -14.200195
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="hand" type="VBoxContainer" parent="debug/HBoxContainer" unique_id=2127480792]
+layout_mode = 2
+
+[node name="deck" type="VBoxContainer" parent="debug/HBoxContainer" unique_id=1892130091]
+layout_mode = 2
 
 [node name="Button" type="Button" parent="." unique_id=1534487972]
 custom_minimum_size = Vector2(150, 50)
@@ -89,13 +109,13 @@ text = "Draw"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=749199112 groups=["ui_layer"]]
 
-[node name="HandUi" parent="CanvasLayer" unique_id=594331797 instance=ExtResource("2_617pg")]
+[node name="HandUi" parent="CanvasLayer" unique_id=594331797 node_paths=PackedStringArray("combatmanager") instance=ExtResource("2_617pg")]
 anchors_preset = -1
 anchor_top = 0.81500006
 anchor_bottom = 1.0
 offset_top = -0.20007324
 offset_bottom = 0.0
 grow_vertical = 0
+combatmanager = NodePath("../../CombatManager")
 
-[connection signal="hand_changed" from="CombatManager" to="CanvasLayer/HandUi" method="_on_combat_manager_hand_changed"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

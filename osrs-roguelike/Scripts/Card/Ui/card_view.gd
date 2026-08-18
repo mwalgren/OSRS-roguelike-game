@@ -4,6 +4,7 @@ class_name CardUi
 var cost:int
 var dmg:int
 var armor:int
+var card_instance
 
 @export var art:Sprite2D
 @export var costlbl:Label
@@ -13,15 +14,18 @@ var armor:int
 
 @export var card_state_machine:CardStateMachine
 @export var drop_point_detector:Area2D
+@export var card_state_released:Node
 
 signal reparent_request(card_ui:CardUi)
+signal card_played(card)
 
 func _ready() -> void:
-	add_to_group("player_card")
 	card_state_machine.init(self)
-
+	card_state_machine.get_child(3).card_released.connect(func(): drop_point_detector.monitorable = true)
+	card_state_released.card_played.connect(_on_release_state_card_played)
 
 func set_card_data(card):
+	card_instance = card
 	cost = card.card_definition.cost
 	dmg = card.card_definition.dmg
 	armor = card.card_definition.armor
@@ -42,10 +46,14 @@ func _on_mouse_entered() ->void:
 func _on_mouse_exited() ->void:
 	card_state_machine.on_mouse_exited()
 
-
 func _on_droppointdetect_area_entered(area: Area2D) -> void:
 	if not targets.has(area):
 		targets.append(area)
 
+
 func _on_droppointdetect_area_exited(area: Area2D) -> void:
 	targets.erase(area)
+
+
+func _on_release_state_card_played(card):
+	card_played.emit(card)

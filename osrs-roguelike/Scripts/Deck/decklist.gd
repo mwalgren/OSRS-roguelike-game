@@ -29,7 +29,6 @@ func get_total():
 func build_from_default(deck):
 	entries.clear()
 	entries = deck.duplicate(true)
-	print(entries, "Card Entries")
 
 
 func as_manifest() -> Dictionary:

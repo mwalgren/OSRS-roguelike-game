@@ -10,11 +10,10 @@ var character_template:Character
 @export_category("Character Skills")
 
 
-var skills = {"Attack": 1, "Strength" : 1, "Ranged" : 1, "Prayer" : 1, "Magic" : 1, "Defense" : 1 }
+var skills = {"Attack": 1, "Strength" : 1, "Ranged" : 1, "Prayer" : 1, "Magic" : 1, "Defense" : 1, "HP": 1 }
 var current_xp = {"Attack" : 0, "Strength" : 0, "Ranged" : 0, "Prayer" : 0, "Magic" : 0, "Defense" : 0  }
 
 var current_deck:Dictionary
-
 var current_inventory:Array [InventoryData]
 
 ##pull character data into runtime character
