@@ -21,8 +21,6 @@ grow_vertical = 2
 script = ExtResource("1_t7meo")
 cardscene = ExtResource("2_dwo1m")
 hbox = NodePath("HBoxContainer")
-fan_radius = 245.0
-fan_angle_deg = 30.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=378422168]
 layout_mode = 1

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bywkevtxwd5l"]
 
-[ext_resource type="Script" uid="uid://dnab67o2l4mq4" path="res://Scenes/UI/Player/player_instance.gd" id="1_ps7oe"]
+[ext_resource type="Script" uid="uid://dnab67o2l4mq4" path="res://Scripts/Player/player_instance.gd" id="1_ps7oe"]
 [ext_resource type="Texture2D" uid="uid://bp75k8vhxirs7" path="res://Assets/Art/Player/ChatGPT Image Aug 17, 2026, 11_09_04 AM.png" id="2_yydo2"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0yyrc"]

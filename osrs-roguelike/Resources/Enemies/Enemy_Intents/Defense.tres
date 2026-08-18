@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="IntentDef" format=3 uid="uid://b0t5ieh387r8i"]
+
+[ext_resource type="Texture2D" uid="uid://ydek3sehfyc1" path="res://Assets/Art/UI Icons/Placeholder/EnemyIntent/64x64/fc664.png" id="1_7lqcv"]
+[ext_resource type="Script" uid="uid://b6bmc3wp6d4m8" path="res://Scripts/Enemies/Enemy_intent.gd" id="1_opv3b"]
+
+[resource]
+script = ExtResource("1_opv3b")
+move_name = "Defense"
+intent_art = ExtResource("1_7lqcv")
+INTENT_TYPE = 1
+metadata/_custom_type_script = "uid://b6bmc3wp6d4m8"
