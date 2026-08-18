@@ -7,11 +7,12 @@
 [ext_resource type="PackedScene" uid="uid://dfufr3scndmwe" path="res://Scenes/UI/Enemy/Enemy_Instance.tscn" id="3_skdv5"]
 [ext_resource type="PackedScene" uid="uid://bywkevtxwd5l" path="res://Scenes/UI/Player/PlayerInstance.tscn" id="4_3vj6l"]
 [ext_resource type="Script" uid="uid://3wacqp5mbay6" path="res://Scenes/UI/Battle Scene/enemy_factory.gd" id="5_7m85r"]
+[ext_resource type="Script" uid="uid://dkwbo5mqxhcl4" path="res://Scenes/UI/Battle Scene/player_factory.gd" id="6_3vj6l"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0t348"]
 size = Vector2(1897, 485)
 
-[node name="BattleScene" type="Control" unique_id=798933934 node_paths=PackedStringArray("CombatMngr", "enemy_spawn_point", "player_spawn_point", "enemy_factory", "deck_vbox", "hand_vbox")]
+[node name="BattleScene" type="Control" unique_id=798933934 node_paths=PackedStringArray("CombatManager", "deck_vbox", "hand_vbox")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -19,15 +20,28 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_kiq2u")
-CombatMngr = NodePath("CombatManager")
-enemy_spawn_point = NodePath("EnemySpawn")
-player_spawn_point = NodePath("PlayerSpawn")
-enemy_factory = NodePath("EnemyFactory")
+CombatManager = NodePath("CombatManager")
 deck_vbox = NodePath("debug/HBoxContainer/deck")
 hand_vbox = NodePath("debug/HBoxContainer/hand")
 hand_container = ExtResource("2_617pg")
+
+[node name="EnemyFactory" type="Node" parent="." unique_id=2044731732 node_paths=PackedStringArray("enemy_spawn_point", "CombatManager")]
+script = ExtResource("5_7m85r")
+enemy_spawn_point = NodePath("../EnemySpawn")
+CombatManager = NodePath("../CombatManager")
 enemy_instance = ExtResource("3_skdv5")
+
+[node name="EnemySpawn" type="Marker2D" parent="." unique_id=1694336406]
+position = Vector2(1629, 726)
+
+[node name="PlayerFactory" type="Node" parent="." unique_id=1573222314 node_paths=PackedStringArray("CombatManager", "player_spawn_point")]
+script = ExtResource("6_3vj6l")
+CombatManager = NodePath("../CombatManager")
+player_spawn_point = NodePath("../PlayerSpawn")
 player_instance = ExtResource("4_3vj6l")
+
+[node name="PlayerSpawn" type="Marker2D" parent="." unique_id=1352038865]
+position = Vector2(297, 724)
 
 [node name="CombatManager" type="Node2D" parent="." unique_id=387170660 node_paths=PackedStringArray("hand_ui")]
 script = ExtResource("1_ch27f")
@@ -41,12 +55,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_ch63h")
-
-[node name="EnemySpawn" type="Marker2D" parent="." unique_id=1694336406]
-position = Vector2(1629, 726)
-
-[node name="PlayerSpawn" type="Marker2D" parent="." unique_id=1352038865]
-position = Vector2(297, 724)
 
 [node name="PlayableArea" type="Area2D" parent="." unique_id=647094680 groups=["playable_area"]]
 collision_layer = 2
@@ -110,8 +118,4 @@ offset_bottom = 0.0
 grow_vertical = 0
 combatmanager = NodePath("../../CombatManager")
 
-[node name="EnemyFactory" type="Node" parent="." unique_id=2044731732]
-script = ExtResource("5_7m85r")
-
-[connection signal="area_entered" from="PlayableArea" to="CombatManager" method="_on_playable_area_area_entered"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

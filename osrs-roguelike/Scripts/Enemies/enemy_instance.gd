@@ -23,8 +23,9 @@ func set_enemy_data(data):
 	enemy_art.texture = data.enemy_art
 	health_bar.max_value = current_hp
 	health_bar.value = current_hp
-	for i in data.move_pool:
+	for i in data.enemy_move_pool:
 		enemyAI.move_pool.append(i)
+
 
 func take_damage(value:int):
 	var final_dmg = randi_range(0, value)

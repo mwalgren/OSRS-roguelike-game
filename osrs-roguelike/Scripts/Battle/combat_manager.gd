@@ -8,18 +8,10 @@ var player_deck_inst:DeckInstance
 var current_enemy_target
 var player
 
+
+
 func _ready() -> void:
-	build_character(GameManager.character_state)
-	
-
-func build_character(character_state:CharacterState):
-	player_deck_inst = DeckInstance.new()
-	player_deck_inst.build_from_decklist(character_state.current_deck)
 	player_deck_inst.hand_changed.connect(hand_ui._on_combat_manager_hand_changed)
-	
-
-func _on_playable_area_area_entered(area: Area2D) -> void:
-	pass
 
 
 func on_card_played(card):
