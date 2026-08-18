@@ -21,7 +21,6 @@ signal card_played(card)
 
 func _ready() -> void:
 	card_state_machine.init(self)
-	card_state_machine.get_child(3).card_released.connect(func(): drop_point_detector.monitorable = true)
 	card_state_released.card_played.connect(_on_release_state_card_played)
 
 func set_card_data(card):
@@ -50,10 +49,10 @@ func _on_droppointdetect_area_entered(area: Area2D) -> void:
 	if not targets.has(area):
 		targets.append(area)
 
-
 func _on_droppointdetect_area_exited(area: Area2D) -> void:
 	targets.erase(area)
 
 
 func _on_release_state_card_played(card):
 	card_played.emit(card)
+	queue_free() #not a permanent solution lol

@@ -18,10 +18,14 @@ func build_from_decklist(deck):
 	hand_array.clear()
 	discard_array.clear()
 	
-	for card_id in deck:
-		for _i in deck[card_id]:
-			var data:CardData = CardRegistry.get_card(card_id)
-			deck_array.append(create_card_inst(data))
+	if !deck:return
+	var curr_deck = deck.duplicate(true)
+	for id in curr_deck.keys():
+		var card = CardRegistry.get_card(id)
+		var count = curr_deck[id]
+		for n in range(count):
+			var card_instance = create_card_inst(card)
+			deck_array.append(card_instance)
 	deck_array.shuffle()
 
 

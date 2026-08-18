@@ -9,6 +9,8 @@ func _ready() -> void:
 	spawn_player()
 
 func build_character(character_state:CharacterState):
+	#var decklist = DeckList.new()
+	#decklist.build_from_default(character_state.default_deck_list)
 	CombatManager.player_deck_inst = DeckInstance.new()
 	CombatManager.player_deck_inst.build_from_decklist(character_state.current_deck)
 

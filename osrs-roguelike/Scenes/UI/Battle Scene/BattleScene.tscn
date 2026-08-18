@@ -85,10 +85,22 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="hand" type="VBoxContainer" parent="debug/HBoxContainer" unique_id=2127480792]
+custom_minimum_size = Vector2(500, 300)
 layout_mode = 2
 
-[node name="deck" type="VBoxContainer" parent="debug/HBoxContainer" unique_id=1892130091]
+[node name="Label" type="Label" parent="debug/HBoxContainer/hand" unique_id=1343096493]
 layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "HAND :"
+
+[node name="deck" type="VBoxContainer" parent="debug/HBoxContainer" unique_id=1892130091]
+custom_minimum_size = Vector2(500, 300)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="debug/HBoxContainer/deck" unique_id=460451298]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "DECK:"
 
 [node name="Button" type="Button" parent="." unique_id=1534487972]
 custom_minimum_size = Vector2(150, 50)

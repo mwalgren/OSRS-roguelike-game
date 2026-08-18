@@ -15,6 +15,7 @@ func _ready() -> void:
 
 
 func on_card_played(card):
+	print("got: ", card.get_class(), " ", card)
 	player_deck_inst.play_from_hand(card)
 	if card.dmg:
 		current_enemy_target.take_damage(card.dmg)

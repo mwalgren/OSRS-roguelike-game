@@ -15,11 +15,14 @@ var current_xp = {"Attack" : 0, "Strength" : 0, "Ranged" : 0, "Prayer" : 0, "Mag
 
 var current_deck:Dictionary
 var current_inventory:Array [InventoryData]
+var default_deck_list:DeckList
 
 ##pull character data into runtime character
 func seed_character_data(t):
+	default_deck_list = DeckList.new()
+	default_deck_list.build_from_default(t.base_deck.default_deck)
 	skills.merge(t.skills)
-	current_deck.merge(t.base_deck.default_deck)
+	current_deck.merge(default_deck_list.entries)
 
 #add xp value to specific skill
 func add_xp(xp_to_add:int, skill:String):

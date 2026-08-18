@@ -1,9 +1,9 @@
 extends RefCounted
 class_name CardInstance
 
-# all of these need to be changed
+#WIP
 
 var card_definition:Resource
-var dmg
-var armor
-var cost
+var dmg:int
+var armor:int
+var cost:int
