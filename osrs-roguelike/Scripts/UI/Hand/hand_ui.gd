@@ -10,6 +10,8 @@ var cards:Array = []
 func _ready() -> void:
 	pass
 
+
+
 func add_card(card_instance) ->Node:
 	var card_node:Node = cardscene.instantiate()
 	card_node.name = "Card_%s" % cards.size()
@@ -22,14 +24,17 @@ func add_card(card_instance) ->Node:
 	return card_node
 
 
+
 func remove_card_node(card_node):
 	if cards.has(card_node):
 		cards.erase(card_node)
-		#arrange_cards()
+
+
 
 func play_card_from_hand(card_node:Node) -> void:
 	remove_card_node(card_node)
 	card_node.queue_free()
+
 
 
 func _on_combat_manager_hand_changed(_hand_array: Variant) -> void:
@@ -38,6 +43,7 @@ func _on_combat_manager_hand_changed(_hand_array: Variant) -> void:
 	cards.clear()
 	for card_inst in _hand_array:
 		add_card(card_inst)
+
 
 func _on_card_ui_reparent_requested(child:CardUi):
 	child.reparent(hbox)

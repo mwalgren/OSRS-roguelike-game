@@ -12,7 +12,7 @@ func enter() ->void:
 		played = true
 		print("played card for target", card_ui.targets)
 	card_released.emit()
-	card_played.emit(card_ui)
+	card_played.emit(card_ui.card_instance)
 
 func on_input(_even:InputEvent):
 	if played:
