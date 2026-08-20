@@ -1,6 +1,7 @@
 [gd_resource type="Resource" script_class="CardData" format=3 uid="uid://y3a2144atqox"]
 
 [ext_resource type="Script" uid="uid://ddgutk55umf80" path="res://Scripts/Card/card_def.gd" id="1_v5hbo"]
+[ext_resource type="Texture2D" uid="uid://d3i2h7nluj2uw" path="res://Assets/Art/UI Icons/Placeholder/EnemyIntent/64x64/fc663.png" id="1_vk523"]
 
 [resource]
 script = ExtResource("1_v5hbo")
@@ -10,6 +11,7 @@ card_descrip = "A basic melee attack"
 rarity = "Common"
 XP_REWARD_TYPE = 0
 dmg = 1
-target_type = "Single"
+target = 1
 cost = 1
+card_art = ExtResource("1_vk523")
 metadata/_custom_type_script = "uid://ddgutk55umf80"

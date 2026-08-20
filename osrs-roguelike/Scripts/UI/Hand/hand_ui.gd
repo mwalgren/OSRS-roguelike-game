@@ -11,18 +11,17 @@ func _ready() -> void:
 	pass
 
 
-
 func add_card(card_instance) ->Node:
 	var card_node:Node = cardscene.instantiate()
+	card_node.parent = self
 	card_node.name = "Card_%s" % cards.size()
 	card_node.card_played.connect(combatmanager.on_card_played)
-	#card_node.card_played.connect(play_card_from_hand)
+	card_node.reparent_request.connect(_on_card_ui_reparent_requested)
 	hbox.add_child(card_node)
 	card_node.set_card_data(card_instance)
 	card_node.set_card_lbls(card_instance)
 	cards.append(card_node)
 	return card_node
-
 
 
 func remove_card_node(card_node):

@@ -1,5 +1,6 @@
 [gd_resource type="Resource" script_class="CardData" format=3 uid="uid://hpyajoefjw7y"]
 
+[ext_resource type="Texture2D" uid="uid://c6x66hiuvxhij" path="res://Assets/Art/UI Icons/Placeholder/EnemyIntent/64x64/fc658.png" id="1_jhv44"]
 [ext_resource type="Script" uid="uid://ddgutk55umf80" path="res://Scripts/Card/card_def.gd" id="1_pvxud"]
 
 [resource]
@@ -10,6 +11,7 @@ card_descrip = "A swift kick."
 rarity = "Common"
 XP_REWARD_TYPE = 1
 dmg = 1
-target_type = "Single"
+target = 1
 cost = 1
+card_art = ExtResource("1_jhv44")
 metadata/_custom_type_script = "uid://ddgutk55umf80"

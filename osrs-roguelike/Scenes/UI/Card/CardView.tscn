@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://clr0ehyvyl8am" path="res://Scripts/Card/CardStates/card_clicked_state.gd" id="6_2fqyy"]
 [ext_resource type="Script" uid="uid://dn3lv0nxcrhcp" path="res://Scripts/Card/CardStates/card_drag_state.gd" id="7_35gup"]
 [ext_resource type="Script" uid="uid://coh1ig5krrf1l" path="res://Scripts/Card/CardStates/card_release_state.gd" id="8_jm703"]
+[ext_resource type="Script" uid="uid://bren0fe55s4hx" path="res://Scripts/Card/CardStates/card_aiming_state.gd" id="9_2fqyy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_44wmb"]
 size = Vector2(195, 276)
@@ -21,7 +22,7 @@ anchor_bottom = 0.27800003
 offset_right = -199.68001
 offset_bottom = -300.24002
 script = ExtResource("1_3fjdc")
-art = NodePath("art_img")
+art = NodePath("Card Art")
 costlbl = NodePath("CardElement/Costlbl")
 namelbl = NodePath("card_name")
 statelbl = NodePath("Label")
@@ -66,20 +67,14 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="art_img" type="Sprite2D" parent="." unique_id=1586247003]
-position = Vector2(-100, -150)
-
 [node name="card_name" type="Label" parent="." unique_id=656467333]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -11.5
-offset_right = 20.0
-offset_bottom = 11.5
+anchors_preset = -1
+anchor_left = 0.4
+anchor_top = 0.275
+anchor_right = 0.6
+anchor_bottom = 0.35200003
+offset_bottom = -0.1000061
 grow_horizontal = 2
 grow_vertical = 2
 horizontal_alignment = 1
@@ -105,6 +100,20 @@ grow_vertical = 0
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Card Art" type="TextureRect" parent="." unique_id=1867696432]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
 [node name="StateMachine" type="Node" parent="." unique_id=991086945 node_paths=PackedStringArray("initial_state")]
 script = ExtResource("4_cgisx")
 initial_state = NodePath("CardBaseState")
@@ -123,6 +132,10 @@ state = 2
 [node name="CardReleaseState" type="Node" parent="StateMachine" unique_id=444153244]
 script = ExtResource("8_jm703")
 state = 3
+
+[node name="CardAimingState" type="Node" parent="StateMachine" unique_id=648215470]
+script = ExtResource("9_2fqyy")
+state = 4
 
 [connection signal="gui_input" from="." to="." method="_on_gui_input"]
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]

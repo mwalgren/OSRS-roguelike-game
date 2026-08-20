@@ -8,9 +8,10 @@
 [ext_resource type="PackedScene" uid="uid://bywkevtxwd5l" path="res://Scenes/UI/Player/PlayerInstance.tscn" id="4_3vj6l"]
 [ext_resource type="Script" uid="uid://3wacqp5mbay6" path="res://Scenes/UI/Battle Scene/enemy_factory.gd" id="5_7m85r"]
 [ext_resource type="Script" uid="uid://dkwbo5mqxhcl4" path="res://Scenes/UI/Battle Scene/player_factory.gd" id="6_3vj6l"]
+[ext_resource type="PackedScene" uid="uid://d3ajf84lj46lj" path="res://Scenes/CardTargetSelector/card_target_selector.tscn" id="9_thar4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0t348"]
-size = Vector2(1897, 485)
+size = Vector2(1897, 596)
 
 [node name="BattleScene" type="Control" unique_id=798933934 node_paths=PackedStringArray("CombatManager", "deck_vbox", "hand_vbox")]
 layout_mode = 3
@@ -60,7 +61,7 @@ texture = ExtResource("2_ch63h")
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayableArea" unique_id=1449764416]
-position = Vector2(959.5, 262.5)
+position = Vector2(959.5, 318)
 shape = SubResource("RectangleShape2D_0t348")
 
 [node name="debug" type="Control" parent="." unique_id=1097998953]
@@ -70,9 +71,10 @@ layout_mode = 1
 anchor_top = 0.083000004
 anchor_right = 0.104
 anchor_bottom = 0.91700006
-offset_top = -89.64001
-offset_right = -199.68001
-offset_bottom = 89.63995
+offset_left = 72.0
+offset_top = 0.35999298
+offset_right = 72.31999
+offset_bottom = -0.3600464
 grow_vertical = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="debug" unique_id=1517628347]
@@ -118,6 +120,8 @@ offset_bottom = -20.840027
 grow_horizontal = 0
 grow_vertical = 2
 text = "Draw"
+
+[node name="CardTargetSelector" parent="." unique_id=1103894407 instance=ExtResource("9_thar4")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=749199112 groups=["ui_layer"]]
 

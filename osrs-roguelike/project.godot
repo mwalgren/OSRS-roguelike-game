@@ -19,6 +19,7 @@ config/icon="res://Assets/Art/UI Icons/Placeholder/icon.svg"
 
 CardRegistry="*uid://dgwjse2gkpasv"
 GameManager="*uid://la2c3nyctne2"
+Event="*uid://bve86xxwtarg7"
 
 [display]
 
@@ -60,6 +61,7 @@ mouse_right={
 
 2d_physics/layer_1="card_target_selector"
 2d_physics/layer_2="card_drop_area"
+2d_physics/layer_3="enemies"
 
 [physics]
 

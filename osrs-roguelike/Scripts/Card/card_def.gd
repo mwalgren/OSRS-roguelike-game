@@ -10,14 +10,17 @@ class_name CardData
 @export var card_name:String
 @export var card_descrip:String
 @export var rarity:String
+
 @export_enum("ATTACK", "STRENGTH", "MAGIC", "PRAYER", "DEFENSE", "RANGED") var XP_REWARD_TYPE
+enum TARGET_TYPE { SELF, SINGLE, AOE }
+enum CARD_TYPE { ATTACK, DEFEND, PRAYER }
 
 #------------------------------------
 @export_category("Damage & Effects")
 @export var dmg:int = 0
 @export var armor:int = 0
-@export var target_type:String
-
+@export var target:TARGET_TYPE
+@export var card_category:CARD_TYPE
 
 #------------------------------------
 @export_category("Cost")
@@ -27,3 +30,9 @@ class_name CardData
 #------------------------------------
 @export_category("Art")
 @export var card_art:Texture
+
+
+
+func is_single_target() ->bool:
+	return target == TARGET_TYPE.SINGLE
+	
